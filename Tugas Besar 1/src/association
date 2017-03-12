@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+class A {
+	public :
+		A() : x(0) { }
+		A(int y) : x(y) {}
+		int GetA() {
+			return x;
+		}
+	private :
+		int x;
+};
+
+class B : public A {
+	public :
+		B() {
+			B::A(3);
+		}
+			
+	private :
+		
+};
+
+int main () {
+	B mit;
+	
+	cout << mit.GetA() << endl; 
+	return 0;
+}
