@@ -1,20 +1,8 @@
-#ifndef RENDER_H
-#define RENDER_H
+#include <iostream>
 
-class Renderable {
-	virtual char render() const = 0;
+//Fungsi dari renderable adalah untuk menampilkan informasi
+//yang bisa ditampilkan dan dibutuhkan di layar
+
+class Renderable{
+	
 };
-
-class Road : public Renderable {
-	void char render() const{
-		cout << "+";
-	}
-};
-
-class Park : public Renderable {
-	void char render() const{
-		cout << "#";
-	}
-};
-
-#endif
