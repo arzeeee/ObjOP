@@ -7,22 +7,28 @@
 //Class Animal dan turunannya (famili animal dan tipe animal)
 class Animal {
   public :
-  	 virtual void Eat() const = 0;
+  	virtual void Eat() const = 0;
 
   	//getter
-  	int getWeight() {return animal_weight;};
-  	int getTipe() {return animal_tipe;};
-  	int getTamed() {return animal_tamed;};
+  	virtual int getWeight();
+  	virtual int getTipe();
+  	virtual int getTamed();
+  	virtual int getX();
+  	virtual int getY();
 
   	//setter
-  	void setWeight(int n) {animal_weight = n;};
-  	void setTipe(int n) {animal_tipe = n;};
-  	void setTamed(int n) {animal_tamed = n;};
-  
-  protected :
+  	virtual void setWeight(int );
+  	virtual void setTipe(int );
+  	virtual void setTamed(int );
+  	virtual void setX(int );
+  	virtual void setY(int );
+
+  	int location_x;
+	int location_y;
   	int animal_weight;
 	int animal_tipe;		
-	int animal_tamed;
+	bool animal_tamed;
+	
 };
 
 class LandAnimal : public Animal {
@@ -31,7 +37,7 @@ class LandAnimal : public Animal {
 		LandAnimal();
 
 		//ctor dengan parameter
-		LandAnimal(int weigth, int tipe, int tamed);
+		LandAnimal(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		LandAnimal(const LandAnimal& la);
@@ -44,6 +50,20 @@ class LandAnimal : public Animal {
 
 		//deklarasi polimorfik 
 		virtual void Eat() const;
+
+	//getter
+  	virtual int getWeight() override;
+  	virtual int getTipe() override;
+  	virtual int getTamed() override;
+  	virtual int getX() override;
+  	virtual int getY() override;
+
+  	//setter
+  	virtual void setWeight(int ) override;
+  	virtual void setTipe(int ) override;
+  	virtual void setTamed(int ) override;
+  	virtual void setX(int ) override;
+  	virtual void setY(int ) override;
 };
 
 class AirAnimal : public Animal {
@@ -52,7 +72,7 @@ class AirAnimal : public Animal {
 		AirAnimal();
 
 		//ctor dengan parameter
-		AirAnimal(int weight, int tipe, int tamed);
+		AirAnimal(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		AirAnimal(const AirAnimal& aa);
@@ -65,6 +85,20 @@ class AirAnimal : public Animal {
 
 		//deklarasi polimorfik
 		virtual void Eat() const;
+
+	//getter
+  	virtual int getWeight() override;
+  	virtual int getTipe() override;
+  	virtual int getTamed() override;
+  	virtual int getX() override;
+  	virtual int getY() override;
+
+  	//setter
+  	virtual void setWeight(int ) override;
+  	virtual void setTipe(int ) override;
+  	virtual void setTamed(int ) override;
+  	virtual void setX(int ) override;
+  	virtual void setY(int ) override;
 };
 
 class WaterAnimal : public Animal {
@@ -73,7 +107,7 @@ class WaterAnimal : public Animal {
 		WaterAnimal();
 
 		//ctor dengan parameter
-		WaterAnimal(int weight, int tipe, int tamed);
+		WaterAnimal(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		WaterAnimal(const WaterAnimal& wa);
@@ -86,6 +120,20 @@ class WaterAnimal : public Animal {
 
 		//deklarasi polimorfik
 		virtual void Eat() const;
+
+	//getter
+  	virtual int getWeight() override;
+  	virtual int getTipe() override;
+  	virtual int getTamed() override;
+  	virtual int getX() override;
+  	virtual int getY() override;
+
+  	//setter
+  	virtual void setWeight(int ) override;
+  	virtual void setTipe(int ) override;
+  	virtual void setTamed(int ) override;
+  	virtual void setX(int ) override;
+  	virtual void setY(int ) override;
 };
 
 
@@ -98,7 +146,7 @@ class Felidae : public LandAnimal {
 		Felidae();
 
 		//ctor dengan parameter
-		Felidae(int weight,int tipe,int tamed);
+		Felidae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Felidae(const Felidae& f);
@@ -119,7 +167,7 @@ class Giraffidae : public LandAnimal {
 		Giraffidae();
 
 		//ctor dengan parameter
-		Giraffidae(int weight,int tipe,int tamed);
+		Giraffidae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Giraffidae(const Giraffidae& g);
@@ -140,7 +188,7 @@ class Ursidae : public LandAnimal {
 		Ursidae();
 
 		//ctor dengan parameter
-		Ursidae(int weight,int tipe,int tamed);
+		Ursidae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Ursidae(const Ursidae& u);
@@ -161,7 +209,7 @@ class Equidae : public LandAnimal {
 		Equidae();
 
 		//ctor dengan parameter
-		Equidae(int weight,int tipe,int tamed);
+		Equidae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Equidae(const Equidae& e);
@@ -182,7 +230,7 @@ class Scorpaenidae : public WaterAnimal {
 		Scorpaenidae();
 
 		//ctor dengan parameter
-		Scorpaenidae(int weight,int tipe,int tamed);
+		Scorpaenidae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Scorpaenidae(const Scorpaenidae& s);
@@ -203,7 +251,7 @@ class Delphidae : public WaterAnimal {
 		Delphidae();
 
 		//ctor dengan parameter
-		Delphidae(int weight,int tipe,int tamed);
+		Delphidae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Delphidae(const Delphidae& d);
@@ -224,7 +272,7 @@ class Selachii : public WaterAnimal {
 		Selachii();
 
 		//ctor
-		Selachii(int weight,int tipe,int tamed);
+		Selachii(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Selachii(const Selachii& s);
@@ -245,7 +293,7 @@ class Octopodiae : public WaterAnimal {
 		Octopodiae();
 
 		//ctor dengan parameter
-		Octopodiae(int weight,int tipe,int tamed);
+		Octopodiae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Octopodiae(const Octopodiae& o);
@@ -266,7 +314,7 @@ class Columbidae : public AirAnimal {
 		Columbidae();
 
 		//ctor dengan parameter
-		Columbidae(int weight,int tipe,int tamed);
+		Columbidae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Columbidae(const Columbidae& c);
@@ -287,7 +335,7 @@ class Accipitridae : public AirAnimal {
 		Accipitridae();
 
 		//ctor dengan parameter
-		Accipitridae(int weight,int tipe,int tamed);
+		Accipitridae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Accipitridae(const Accipitridae& a);
@@ -308,7 +356,7 @@ class Molossidae : public AirAnimal {
 		Molossidae();
 
 		//ctor dengan parameter
-		Molossidae(int weight,int tipe,int tamed);
+		Molossidae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Molossidae(const Molossidae& m);
@@ -329,7 +377,7 @@ class Paradisaeidae : public AirAnimal {
 		Paradisaeidae();
 
 		//ctor dengan parameter
-		Paradisaeidae(int weight,int tipe,int tamed);
+		Paradisaeidae(int weight,int tipe,bool tamed,int x,int y);
 
 		//cctor
 		Paradisaeidae(const Paradisaeidae& p);
@@ -354,7 +402,7 @@ class Kucing : public Felidae {
 	public :
 		Kucing();
 		//ctor dengan parameter
-		Kucing(int weight, int tipe, int tamed);
+		Kucing(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Kucing(const Kucing& k);
@@ -372,7 +420,7 @@ class Kucing : public Felidae {
 class Harimau : public Felidae {
 	public :
 		//ctor dengan parameter
-		Harimau(int weight, int tipe, int tamed);
+		Harimau(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Harimau(const Harimau& h);
@@ -390,7 +438,7 @@ class Harimau : public Felidae {
 class Singa : public Felidae {
 	public :
 		//ctor dengan parameter
-		Singa(int weight, int tipe, int tamed);
+		Singa(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor 
 		Singa(const Singa& s);
@@ -408,7 +456,7 @@ class Singa : public Felidae {
 class Jerapah : public Giraffidae {
 	public :
 		//ctor dengan parameter
-		Jerapah(int weight, int tipe, int tamed);
+		Jerapah(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Jerapah(const Jerapah& j);
@@ -426,7 +474,7 @@ class Jerapah : public Giraffidae {
 class Okapi : public Giraffidae {
 	public :
 		//ctor dengan parameter
-		Okapi(int weight, int tipe, int tamed);
+		Okapi(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Okapi(const Okapi& o);
@@ -444,7 +492,7 @@ class Okapi : public Giraffidae {
 class Panda : public Ursidae {
 	public :
 		//ctor dengan parameter
-		Panda(int weight, int tipe, int tamed);
+		Panda(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Panda(const Panda& p);
@@ -462,7 +510,7 @@ class Panda : public Ursidae {
 class Beruang : public Ursidae {
 	public :
 		//ctor dengan parameter
-		Beruang(int weight, int tipe, int tamed);
+		Beruang(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Beruang(const Beruang& b);
@@ -480,7 +528,7 @@ class Beruang : public Ursidae {
 class Zebra : public Equidae {
 	public :
 		//ctor dengan parameter
-		Zebra(int weight, int tipe, int tamed);
+		Zebra(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Zebra(const Zebra& z);
@@ -498,7 +546,7 @@ class Zebra : public Equidae {
 class Kuda : public Equidae {
 	public :
 		//ctor dengan parameter
-		Kuda(int weight, int tipe, int tamed);
+		Kuda(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Kuda(const Kuda& k);
@@ -517,7 +565,7 @@ class Kuda : public Equidae {
 class Ebosia : public Scorpaenidae {
 	public :
 		//ctor dengan parameter
-		Ebosia(int weight, int tipe, int tamed);
+		Ebosia(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Ebosia(const Ebosia& e);
@@ -536,7 +584,7 @@ class Ebosia : public Scorpaenidae {
 class Lionfish : public Scorpaenidae {
 	public :
 		//ctor dengan parameter
-		Lionfish(int weight, int tipe, int tamed);
+		Lionfish(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Lionfish(const Lionfish& l);
@@ -554,7 +602,7 @@ class Lionfish : public Scorpaenidae {
 class LumbaLumba : public Delphidae {
 	public :
 		//ctor dengan parameter
-		LumbaLumba(int weight, int tipe, int tamed);
+		LumbaLumba(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		LumbaLumba(const LumbaLumba& l);
@@ -572,7 +620,7 @@ class LumbaLumba : public Delphidae {
 class HiuPutih : public Selachii {
 	public :
 		//ctor dengan parameter
-		HiuPutih(int weight, int tipe, int tamed);
+		HiuPutih(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		HiuPutih(const HiuPutih& h);
@@ -590,7 +638,7 @@ class HiuPutih : public Selachii {
 class BigBlueOct : public Octopodiae {
 	public :
 		//ctor dengan parameter
-		BigBlueOct(int weight, int tipe, int tamed);
+		BigBlueOct(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		BigBlueOct(const BigBlueOct& b);
@@ -608,7 +656,7 @@ class BigBlueOct : public Octopodiae {
 class EastPacRedOct : public Octopodiae {
 	public :
 		//ctor dengan parameter
-		EastPacRedOct(int weight, int tipe, int tamed);
+		EastPacRedOct(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		EastPacRedOct(const EastPacRedOct& e);
@@ -627,7 +675,7 @@ class EastPacRedOct : public Octopodiae {
 class Merpati : public Columbidae {
 	public :
 		//ctor dengan parameter
-		Merpati(int weight, int tipe, int tamed);
+		Merpati(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Merpati(const Merpati& m);
@@ -645,7 +693,7 @@ class Merpati : public Columbidae {
 class Rajawali : public Accipitridae {
 	public :
 		//ctor dengan parameter
-		Rajawali(int weight, int tipe, int tamed);
+		Rajawali(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Rajawali(const Rajawali& r);
@@ -663,7 +711,7 @@ class Rajawali : public Accipitridae {
 class Elang : public Accipitridae {
 	public :
 		//ctor dengan parameter
-		Elang(int weight, int tipe, int tamed);
+		Elang(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Elang(const Elang& e);
@@ -681,7 +729,7 @@ class Elang : public Accipitridae {
 class Kelelawar : public Molossidae {
 	public :
 		//ctor dengan parameter
-		Kelelawar(int weight, int tipe, int tamed);
+		Kelelawar(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Kelelawar(const Kelelawar& k);
@@ -700,7 +748,7 @@ class Kelelawar : public Molossidae {
 class Cendrawasih : public Paradisaeidae {
 	public :
 		//ctor dengan parameter
-		Cendrawasih(int weight, int tipe, int tamed);
+		Cendrawasih(int weight, int tipe, bool tamed,int x,int y);
 
 		//cctor
 		Cendrawasih(const Cendrawasih& c);
