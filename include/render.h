@@ -8,7 +8,7 @@
 class Renderable{
 public:
 	//render menampilkan Virtual Zoo dalam console teks
-	virtual void render() const=0;
+	virtual void Render() const=0;
 	
 	//assignChar menetapkan suatu karater untuk
 	//merepresentasikan sebuah cell
