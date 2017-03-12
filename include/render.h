@@ -1,5 +1,5 @@
-#ifndef render
-#define render
+#ifndef RENDER_H
+#define RENDER_H
 #include <iostream>
 
 //Fungsi dari renderable adalah untuk menampilkan informasi
@@ -8,7 +8,7 @@
 class Renderable{
 public:
 	//render menampilkan Virtual Zoo dalam console teks
-	virtual void Render() const=0;
+	virtual void Render() = 0;
 	
 	//assignChar menetapkan suatu karater untuk
 	//merepresentasikan sebuah cell

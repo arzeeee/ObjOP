@@ -1,6 +1,8 @@
 #ifndef CELL_H
 #define CELL_H
 
+#include "render.h"
+
 class Cell {
 	public :
 		//ctor tanpa parameter
@@ -46,6 +48,9 @@ class LandHabitat : public Habitat {
 		//operator=
 		LandHabitat& operator= (const LandHabitat& lm);
 
+		//render
+		void Render();
+
 };
 
 class AirHabitat : public Habitat {
@@ -61,6 +66,9 @@ class AirHabitat : public Habitat {
 
 		//operator=
 		AirHabitat& operator= (const AirHabitat& am);
+
+		//render
+		void Render();
 };
 
 class WaterHabitat : public Habitat {
@@ -76,6 +84,9 @@ class WaterHabitat : public Habitat {
 
 		//operator=
 		WaterHabitat& operator= (const WaterHabitat& wm);
+		
+		//render
+		void Render();
 
 };
 
@@ -102,6 +113,9 @@ class Road : public Facility {
 
 		virtual int setRoad(int y);
 
+		//render
+		void Render();
+
 };
 
 class Entrance : public Road {
@@ -117,6 +131,9 @@ class Entrance : public Road {
 
 		//operator=
 		Entrance& operator= (const Entrance& em);
+
+		//render
+		void Render();
 };
 
 class Exit : public Road {
@@ -132,6 +149,9 @@ class Exit : public Road {
 
 		//operator=
 		Exit& operator= (const Exit& em);
+
+		//render
+		void Render();
 };
 
 class Park : public Facility {
@@ -147,6 +167,9 @@ class Park : public Facility {
 
 		//operator=
 		Park& operator= (const Park& pm);
+
+		//render
+		void Render();
 };
 
 class Restaurant : public Facility {
@@ -162,6 +185,9 @@ class Restaurant : public Facility {
 
 		//operator=
 		Restaurant& operator= (const Restaurant& rm);
+
+		//render
+		void Render();
 };
 
 #endif

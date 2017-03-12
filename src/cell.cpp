@@ -1,5 +1,6 @@
 #include <iostream>
 #include "cell.h"
+#include "render.h"
 
 using namespace std;
 
@@ -56,6 +57,10 @@ LandHabitat& LandHabitat::operator= (const LandHabitat& lm) {
 	return *this;
 }
 
+void LandHabitat::Render() {
+	cout << "+";
+}
+
 //Implementasi Air Habitat
 AirHabitat::AirHabitat() : Habitat(2){
 	
@@ -74,6 +79,10 @@ AirHabitat& AirHabitat::operator= (const AirHabitat& am) {
 	return *this;
 }
 
+void AirHabitat::Render() {
+	cout << "@";
+}
+
 //Implementasi Water Habitat
 WaterHabitat::WaterHabitat() : Habitat(3){
 	
@@ -90,6 +99,10 @@ WaterHabitat& WaterHabitat::operator=(const WaterHabitat& wm) {
 		Habitat::Cell::operator=(wm);
 	}
 	return *this;
+}
+
+void WaterHabitat::Render() {
+	cout << "$";
 }
 
 //Implementasi Facility, abstrak deng kosong
@@ -115,7 +128,11 @@ Road& Road::operator= (const Road& rm) {
 int Road::setRoad(int y) {
 	nilai_cell[0] = y;
 }
- 
+
+void Road::Render() {
+	cout << "#";
+}
+
 //Implementasi Entrance
 
 Entrance::Entrance() {
@@ -170,6 +187,10 @@ Park& Park::operator= (const Park& pm) {
 	return *this;
 }
 
+void Park::Render() {
+	cout << "~";
+}
+
 //Implementasi Restaurant
 Restaurant::Restaurant() : Facility(-3) {
 }
@@ -184,4 +205,8 @@ Restaurant& Restaurant::operator= (const Restaurant& rm) {
 		Facility::Cell::operator=(rm);
 	}
 	return *this;
+}
+
+void Restaurant::Render() {
+	cout << "&";
 }
