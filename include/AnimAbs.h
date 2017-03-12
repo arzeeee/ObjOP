@@ -49,7 +49,7 @@ class LandAnimal : public Animal {
 		LandAnimal& operator=(const LandAnimal& lam);
 
 		//deklarasi polimorfik 
-		virtual void Eat() ;
+		virtual void Eat(){};
 
   	//Realisasi getter
 	virtual int getWeight() 	{return animal_weight;}
@@ -84,7 +84,7 @@ class AirAnimal : public Animal {
 		AirAnimal& operator=(const AirAnimal& aam);
 
 		//deklarasi polimorfik
-		virtual void Eat() ;
+		virtual void Eat(){} ;
 
 	//Realisasi getter
 	virtual int getWeight() 	{return animal_weight;}

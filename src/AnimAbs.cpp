@@ -166,7 +166,7 @@ Felidae::~Felidae() {}
 
 Felidae& Felidae::operator=(const Felidae& fm) {}
 
-void Felidae::Eat(){}
+
 
 //Implementasi Giraffidae
 Giraffidae::Giraffidae(){
@@ -197,7 +197,7 @@ Giraffidae::~Giraffidae() {}
 
 Giraffidae& Giraffidae::operator=(const Giraffidae& gm) {}
 
-void Giraffidae::Eat(){}
+
 
 //Implementasi Ursidae
 Ursidae::Ursidae(){
@@ -229,7 +229,7 @@ Ursidae::~Ursidae() {}
 
 Ursidae& Ursidae::operator=(const Ursidae& um) {}
 
-void Ursidae::Eat(){}
+
 
 //Implementasi Equidae
 Equidae::Equidae(){
@@ -260,7 +260,7 @@ Equidae::~Equidae() {}
 
 Equidae& Equidae::operator=(const Equidae& em) {}
 
-void Equidae::Eat(){}
+
 
 //Implementasi Scorpaenidae
 Scorpaenidae::Scorpaenidae(){
@@ -291,7 +291,7 @@ Scorpaenidae::~Scorpaenidae() {}
 
 Scorpaenidae& Scorpaenidae::operator=(const Scorpaenidae& sm) {}
 
-void Scorpaenidae::Eat(){}
+
 
 //Implementasi Delphidae
 Delphidae::Delphidae(){
@@ -322,7 +322,7 @@ Delphidae::~Delphidae() {}
 
 Delphidae& Delphidae::operator=(const Delphidae& dm) {}
 
-void Delphidae::Eat(){}
+
 
 //Implementasi Selachii
 Selachii::Selachii(){
@@ -353,7 +353,7 @@ Selachii::~Selachii() {}
 
 Selachii& Selachii::operator=(const Selachii& sm) {}
 
-void Selachii::Eat(){}
+
 
 //Implementasi Octopodiae
 Octopodiae::Octopodiae(){
@@ -384,7 +384,7 @@ Octopodiae::~Octopodiae() {}
 
 Octopodiae& Octopodiae::operator=(const Octopodiae& om) {}
 
-void Octopodiae::Eat(){}
+
 
 //Implementasi Columbidae
 Columbidae::Columbidae(){
@@ -415,7 +415,7 @@ Columbidae::~Columbidae() {}
 
 Columbidae& Columbidae::operator=(const Columbidae& cm) {}
 
-void Columbidae::Eat(){}
+
 
 //Implementasi Accipitridae
 Accipitridae::Accipitridae(){
@@ -446,7 +446,7 @@ Accipitridae::~Accipitridae() {}
 
 Accipitridae& Accipitridae::operator=(const Accipitridae& am) {}
 
-void Accipitridae::Eat(){}
+
 
 //Implementasi Molossidae
 Molossidae::Molossidae(){
@@ -477,7 +477,7 @@ Molossidae::~Molossidae() {}
 
 Molossidae& Molossidae::operator=(const Molossidae& mm) {}
 
-void Molossidae::Eat(){}
+
 
 //Implementasi Paradisaeidae
 Paradisaeidae::Paradisaeidae(){
@@ -508,7 +508,7 @@ Paradisaeidae::~Paradisaeidae() {}
 
 Paradisaeidae& Paradisaeidae::operator=(const Paradisaeidae& pm) {}
 
-void Paradisaeidae::Eat(){}
+
 
 /*******************/
 /*DEFINISI  SPESIES*/
@@ -544,7 +544,7 @@ Kucing::~Kucing() {}
 
 Kucing& Kucing::operator=(const Kucing& km) {}
 
-void Kucing::Eat(){}
+
 
 //Implementasi Harimau
 Harimau::Harimau(int weight, int tipe, bool tamed,int x,int y) {
@@ -567,7 +567,7 @@ Harimau::~Harimau() {}
 
 Harimau& Harimau::operator=(const Harimau& hm) {}
 
-void Harimau::Eat(){}
+
 
 //Implementasi Singa
 Singa::Singa(int weight, int tipe, bool tamed,int x,int y){
@@ -590,7 +590,7 @@ Singa::~Singa() {}
 
 Singa& Singa::operator=(const Singa& sm) {}
 
-void Singa::Eat(){}
+
 
 //Implementasi Jerapah
 Jerapah::Jerapah(int weight, int tipe, bool tamed,int x,int y) {
@@ -613,7 +613,7 @@ Jerapah::~Jerapah() {}
 
 Jerapah& Jerapah::operator=(const Jerapah& jm) {}
 
-void Jerapah::Eat(){}
+
 
 //Implementasi Okapi
 Okapi::Okapi(int weight, int tipe, bool tamed,int x,int y){
@@ -636,7 +636,7 @@ Okapi::~Okapi(){}
 
 Okapi& Okapi::operator=(const Okapi& om) {}
 
-void Okapi::Eat(){}
+
 
 //Implementasi Panda
 Panda::Panda(int weight, int tipe, bool tamed,int x,int y){
@@ -659,7 +659,7 @@ Panda::~Panda(){}
 
 Panda& Panda::operator=(const Panda& pm) {}
 
-void Panda::Eat(){}
+
 
 //Implementasi Beruang
 Beruang::Beruang(int weight, int tipe, bool tamed,int x,int y){
@@ -682,7 +682,7 @@ Beruang::~Beruang(){}
 
 Beruang& Beruang::operator=(const Beruang& bm) {}
 
-void Beruang::Eat(){}
+
 
 //Implementasi Zebra
 Zebra::Zebra(int weight, int tipe, bool tamed,int x,int y){
@@ -705,7 +705,7 @@ Zebra::~Zebra(){}
 
 Zebra& Zebra::operator=(const Zebra& zm) {}
 
-void Zebra::Eat(){}
+
 
 //Implementasi Kuda
 Kuda::Kuda(int weight, int tipe, bool tamed,int x,int y){
@@ -728,7 +728,7 @@ Kuda::~Kuda(){}
 
 Kuda& Kuda::operator=(const Kuda& km) {}
 
-void Kuda::Eat(){}
+
 
 
 /****************WATER ANIMAL*****************/
@@ -753,7 +753,7 @@ Ebosia::~Ebosia(){}
 
 Ebosia& Ebosia::operator=(const Ebosia& em) {}
 
-void Ebosia::Eat(){}
+
 
 //Implementasi Lionfish
 Lionfish::Lionfish(int weight, int tipe, bool tamed,int x,int y){
@@ -776,7 +776,7 @@ Lionfish::~Lionfish(){}
 
 Lionfish& Lionfish::operator=(const Lionfish& lm) {}
 
-void Lionfish::Eat(){}
+
 
 //Implementasi LumbaLumba
 LumbaLumba::LumbaLumba(int weight, int tipe, bool tamed,int x,int y) {
@@ -799,7 +799,7 @@ LumbaLumba::~LumbaLumba(){}
 
 LumbaLumba& LumbaLumba::operator=(const LumbaLumba& lm) {}
 
-void LumbaLumba::Eat(){}
+
 
 //Implementasi HiuPutih
 HiuPutih::HiuPutih(int weight, int tipe, bool tamed,int x,int y){
@@ -822,7 +822,7 @@ HiuPutih::~HiuPutih(){}
 
 HiuPutih& HiuPutih::operator=(const HiuPutih& hm) {}
 
-void HiuPutih::Eat(){}
+
 
 //Implementasi BigBlueOct
 BigBlueOct::BigBlueOct(int weight, int tipe, bool tamed,int x,int y){
@@ -845,7 +845,7 @@ BigBlueOct::~BigBlueOct(){}
 
 BigBlueOct& BigBlueOct::operator=(const BigBlueOct& bm) {}
 
-void BigBlueOct::Eat(){}
+
 
 //Implementasi EastPacRedOct
 EastPacRedOct::EastPacRedOct(int weight, int tipe, bool tamed,int x,int y) {
@@ -868,7 +868,7 @@ EastPacRedOct::~EastPacRedOct(){}
 
 EastPacRedOct& EastPacRedOct::operator=(const EastPacRedOct& em) {}
 
-void EastPacRedOct::Eat(){}
+
 
 
 /****************AIR ANIMAL*****************/
@@ -893,7 +893,7 @@ Merpati::~Merpati(){}
 
 Merpati& Merpati::operator=(const Merpati& mm) {}
 
-void Merpati::Eat(){}
+
 
 //Impelementasi Rajawali
 Rajawali::Rajawali(int weight, int tipe, bool tamed,int x,int y){
@@ -916,7 +916,7 @@ Rajawali::~Rajawali(){}
 
 Rajawali& Rajawali::operator=(const Rajawali& rm) {}
 
-void Rajawali::Eat(){}
+
 
 //Impelementasi Elang
 Elang::Elang(int weight, int tipe, bool tamed,int x,int y){
@@ -939,7 +939,7 @@ Elang::~Elang(){}
 
 Elang& Elang::operator=(const Elang& em) {}
 
-void Elang::Eat(){}
+
 
 //Implementasi Kelelawar
 Kelelawar::Kelelawar(int weight, int tipe, bool tamed,int x,int y) {
@@ -962,7 +962,7 @@ Kelelawar::~Kelelawar(){}
 
 Kelelawar& Kelelawar::operator=(const Kelelawar& km) {}
 
-void Kelelawar::Eat(){}
+
 
 //Implementasi Cendrawasih
 Cendrawasih::Cendrawasih(int weight, int tipe, bool tamed,int x,int y){
@@ -985,5 +985,5 @@ Cendrawasih::~Cendrawasih(){}
 
 Cendrawasih& Cendrawasih::operator=(const Cendrawasih& cm) {}
 
-void Cendrawasih::Eat(){}
+
 
