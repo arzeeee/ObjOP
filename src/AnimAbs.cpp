@@ -1,294 +1,821 @@
-#include "AnimAbs.h"
 #include <iostream>
+#include "AnimAbs.h"
 
 using namespace std;
 
-/*Animal Berdasarkan Habitat*/
+/******************/
+/*DEFINISI  ANIMAL*/
+/******************/
+//ini komen
+//Tidak direalisasikan karena kelas ABC
 
-//Land Animal
+//ctor tanpa parameter
+LandAnimal::LandAnimal(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//ctor
-LandAnimal::LandAnimal() {}
+//ctor dengan parameter
+LandAnimal::LandAnimal(int weight,int tipe, int tamed) {
+	animal_weight = weight;
+	animal_tipe = tipe;
+	animal_tamed = tamed;
+}
 
 //cctor
-LandAnimal::LandAnimal(const LandAnimal& la) {}
+LandAnimal::LandAnimal(const LandAnimal& la) {
+	this->animal_weight = la.animal_weight;
+	this->animal_tipe = la.animal_tipe;
+	this->animal_tamed = la.animal_tamed;	
+}
 
 //dtor
-virtual LandAnimal::~LandAnimal() {}
+LandAnimal::~LandAnimal() {}
 
 //operator=
-LandAnimal& LandAnimal::operator=(const LandAnimal& lam) {}
+LandAnimal& LandAnimal::operator=(const LandAnimal& lam) {
+	this->animal_weight = lam.animal_weight;
+	this->animal_tipe = lam.animal_tipe;
+	this->animal_tamed = lam.animal_tamed;
+}
 
 //method eat
-virtual void LandAnimal::Eat() {}
+void LandAnimal::Eat() const {}
 
 
 //Air Animal
 
-//ctor
-Airnimal::AirAnimal() {}
+//ctor tanpa parameter
+AirAnimal::AirAnimal(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
+
+//ctor dengan parameter
+AirAnimal::AirAnimal(int weight,int tipe, int tamed){
+	animal_weight = weight;
+	animal_tipe = tipe;
+	animal_tamed = tamed;
+}
 
 //cctor
-AirAnimal::AirAnimal(const AirAnimal& a) {}
+AirAnimal::AirAnimal(const AirAnimal& aa) {
+	this->animal_weight = aa.animal_weight;
+	this->animal_tipe = aa.animal_tipe;
+	this->animal_tamed = aa.animal_tamed;
+}
 
 //dtor
-virtual AirAnimal::~AirAnimal() {}
+AirAnimal::~AirAnimal() {}
 
 //operator=
-AirAnimal& AirAnimal::operator=(const AirAnimal& aam) {}
+AirAnimal& AirAnimal::operator=(const AirAnimal& aam) {
+	this->animal_weight = aam.animal_weight;
+	this->animal_tipe = aam.animal_tipe;
+	this->animal_tamed = aam.animal_tamed;
+} 
 
 //method eat
-virtual void AirAnimal::Eat() {}
+void AirAnimal::Eat() const {}
 
 
 //Water Animal
 
-//ctor
-WaterAnimal::WaterAnimal() {}
+//ctor tanpa parameter
+WaterAnimal::WaterAnimal(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
+
+//ctor dengan parameter
+WaterAnimal::WaterAnimal(int weight,int tipe, int tamed){
+	animal_weight = weight;
+	animal_tipe = tipe;
+	animal_tamed = tamed;
+}
 
 //cctor
-WaterAnimal::WaterAnimal(const WaterAnimal& wa) {}
+WaterAnimal::WaterAnimal(const WaterAnimal& wa) {
+	this->animal_weight = wa.animal_weight;
+	this->animal_tipe = wa.animal_tipe;
+	this->animal_tamed = wa.animal_tamed;
+}
 
 //dtor
-virtual WaterAnimal::~WaterAnimal() {}
+WaterAnimal::~WaterAnimal() {}
 
 //operator=
-WaterAnimal& WaterAnimal::operator=(const WaterAnimal& wam) {}
+WaterAnimal& WaterAnimal::operator=(const WaterAnimal& wam) {
+	this->animal_weight = wam.animal_weight;
+	this->animal_tipe = wam.animal_tipe;
+	this->animal_tamed = wam.animal_tamed;
+} 
 
 //method eat
-virtual void WaterAnimal::Eat() {}
+void WaterAnimal::Eat() const {}
 
-/*Animal Berdasarkan Famili*/
 
-//Felidae
 
-//ctor
-Felidae::Felidae() {}
+/*************************/
+/*DEFINISI  FAMILI ANIMAL*/
+/*************************/
 
-//cctor
-Felidae::Felidae(const Felidae& f) {}
+//Implementasi Felidae
+Felidae::Felidae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//dtor
-virtual Felidae::~Felidae() {}
+Felidae::Felidae(int weight,int tipe,int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//operator=
+Felidae::Felidae(const Felidae& f){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Felidae::~Felidae() {}
+
 Felidae& Felidae::operator=(const Felidae& fm) {}
 
-//method eat
-virtual void Felidae::Eat() {}
+void Felidae::Eat() const{}
+
+//Implementasi Giraffidae
+Giraffidae::Giraffidae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
+
+Giraffidae::Giraffidae(int weight,int tipe,int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Giraffidae::Giraffidae(const Giraffidae& g){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Giraffidae::~Giraffidae() {}
+
+Giraffidae& Giraffidae::operator=(const Giraffidae& gm) {}
+
+void Giraffidae::Eat() const{}
+
+//Implementasi Ursidae
+Ursidae::Ursidae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
+
+Ursidae::Ursidae(int weight,int tipe,int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
 
-//Giraffidae
+Ursidae::Ursidae(const Ursidae& u) {
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//ctor
-Giraffidae::Giraffidae() {}
+Ursidae::~Ursidae() {}
 
-//cctor
-Giraffidae::Giraffidae(const Giraffidae& g) {}
-
-//dtor
-virtual Giraffidae::~Giraffidae() {}
-
-//operator=
-Giraffidae& Giraffidae::operator=(const Giraffidae& fm) {}
-
-//method eat
-virtual void Giraffidae::Eat() {}
-
-
-//Ursidae
-
-//ctor
-Ursidae::Ursidae() {}
-
-//cctor
-Ursidae::Ursidae(const Ursidae& u) {}
-
-//dtor
-virtual Ursidae::~Ursidae() {}
-
-//operator=
 Ursidae& Ursidae::operator=(const Ursidae& um) {}
 
-//method eat
-virtual void Ursidae::Eat() {}
+void Ursidae::Eat() const{}
 
+//Implementasi Equidae
+Equidae::Equidae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//Equidae
+Equidae::Equidae(int weight,int tipe,int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//ctor
-Equidae::Equidae() {}
+Equidae::Equidae(const Equidae& e){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//cctor
-Equidae::Equidae(const Equidae& e) {}
+Equidae::~Equidae() {}
 
-//dtor
-virtual Equidae::~Equidae() {}
-
-//operator=
 Equidae& Equidae::operator=(const Equidae& em) {}
 
-//method eat
-virtual void Equidae::Eat() {}
+void Equidae::Eat() const{}
 
+//Implementasi Scorpaenidae
+Scorpaenidae::Scorpaenidae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//Scorpaenidae
+Scorpaenidae::Scorpaenidae(int weight,int tipe,int tamed) {
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//ctor
-Scorpaenidae::Scorpaenidae() {}
+Scorpaenidae::Scorpaenidae(const Scorpaenidae& s){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//cctor
-Scorpaenidae::Scorpaenidae(const Scorpaenidae& s) {}
+Scorpaenidae::~Scorpaenidae() {}
 
-//dtor
-virtual Scorpaenidae::~Scorpaenidae() {}
-
-//operator=
 Scorpaenidae& Scorpaenidae::operator=(const Scorpaenidae& sm) {}
 
-//method eat
-virtual void Scorpaenidae::Eat() {}
+void Scorpaenidae::Eat() const{}
 
+//Implementasi Delphidae
+Delphidae::Delphidae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//Delphidae
+Delphidae::Delphidae(int weight,int tipe,int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//ctor
-Delphidae::Delphidae() {}
+Delphidae::Delphidae(const Delphidae& d){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//cctor
-Delphidae::Delphidae(const Delphidae& d) {}
+Delphidae::~Delphidae() {}
 
-//dtor
-virtual Delphidae::~Delphidae() {}
-
-//operator=
 Delphidae& Delphidae::operator=(const Delphidae& dm) {}
 
-//method eat
-virtual void Delphidae::Eat() {}
+void Delphidae::Eat() const{}
 
+//Implementasi Selachii
+Selachii::Selachii(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//Selachii
+Selachii::Selachii(int weight,int tipe,int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//ctor
-Selachii::Selachii() {}
+Selachii::Selachii(const Selachii& s){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//cctor
-Selachii::Selachii(const Selachii& s) {}
+Selachii::~Selachii() {}
 
-//dtor
-virtual Selachii::~Selachii() {}
-
-//operator=
 Selachii& Selachii::operator=(const Selachii& sm) {}
 
-//method eat
-virtual void Selachii::Eat() {}
+void Selachii::Eat() const{}
 
+//Implementasi Octopodiae
+Octopodiae::Octopodiae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//Octopodiae
+Octopodiae::Octopodiae(int weight,int tipe,int tamed) {
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//ctor
-Octopodiae::Octopodiae() {}
+Octopodiae::Octopodiae(const Octopodiae& o){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//cctor
-Octopodiae::Octopodiae(const Octopodiae& o) {}
+Octopodiae::~Octopodiae() {}
 
-//dtor
-virtual Octopodiae::~Octopodiae() {}
-
-//operator=
 Octopodiae& Octopodiae::operator=(const Octopodiae& om) {}
 
-//method eat
-virtual void Octopodiae::Eat() {}
+void Octopodiae::Eat() const{}
 
+//Implementasi Columbidae
+Columbidae::Columbidae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//Columbidae
+Columbidae::Columbidae(int weight,int tipe,int tamed) {
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//ctor
-Columbidae::Columbidae() {}
+Columbidae::Columbidae(const Columbidae& c){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//cctor
-Columbidae::Columbidae(const Columbidae& c) {}
+Columbidae::~Columbidae() {}
 
-//dtor
-virtual Columbidae::~Columbidae() {}
-
-//operator=
 Columbidae& Columbidae::operator=(const Columbidae& cm) {}
 
-//method eat
-virtual void Columbidae::Eat() {}
+void Columbidae::Eat() const{}
 
+//Implementasi Accipitridae
+Accipitridae::Accipitridae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//Accipitridae
+Accipitridae::Accipitridae(int weight,int tipe,int tamed) {
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//ctor
-Accipitridae::Accipitridae() {}
+Accipitridae::Accipitridae(const Accipitridae& a){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//cctor
-Accipitridae::Accipitridae(const Accipitridae& a) {}
+Accipitridae::~Accipitridae() {}
 
-//dtor
-virtual Accipitridae::~Accipitridae() {}
-
-//operator=
 Accipitridae& Accipitridae::operator=(const Accipitridae& am) {}
 
-//method eat
-virtual void Accipitridae::Eat() {}
+void Accipitridae::Eat() const{}
 
+//Implementasi Molossidae
+Molossidae::Molossidae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//Molossidae
+Molossidae::Molossidae(int weight,int tipe,int tamed) {
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//ctor
-Molossidae::Molossidae() {}
+Molossidae::Molossidae(const Molossidae& m){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//cctor
-Molossidae::Molossidae(const Molossidae& m) {}
+Molossidae::~Molossidae() {}
 
-//dtor
-virtual Molossidae::~Molossidae() {}
-
-//operator=
 Molossidae& Molossidae::operator=(const Molossidae& mm) {}
 
-//method eat
-virtual void Molossidae::Eat() {}
+void Molossidae::Eat() const{}
 
+//Implementasi Paradisaeidae
+Paradisaeidae::Paradisaeidae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
 
-//Paradisaeidae
+Paradisaeidae::Paradisaeidae(int weight,int tipe,int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//ctor
-Paradisaeidae::Paradisaeidae() {}
+Paradisaeidae::Paradisaeidae(const Paradisaeidae& p){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//cctor
-Paradisaeidae::Paradisaeidae(const Paradisaeidae& p) {}
+Paradisaeidae::~Paradisaeidae() {}
 
-//dtor
-virtual Paradisaeidae::~Paradisaeidae() {}
-
-//operator=
 Paradisaeidae& Paradisaeidae::operator=(const Paradisaeidae& pm) {}
 
-//method eat
-virtual void Paradisaeidae::Eat() {}
+void Paradisaeidae::Eat() const{}
+
+/*******************/
+/*DEFINISI  SPESIES*/
+/*******************/
+
+/****************LAND ANIMAL*****************/
+//Implementasi Kucing
+Kucing::Kucing() {
+	setWeight(0);
+	setTipe(0);
+	setTamed(0);
+}
+
+Kucing::Kucing(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Kucing::Kucing(const Kucing& k){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Kucing::~Kucing() {}
+
+Kucing& Kucing::operator=(const Kucing& km) {}
+
+void Kucing::Eat() const{}
+
+//Implementasi Harimau
+Harimau::Harimau(int weight, int tipe, int tamed) {
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Harimau::Harimau(const Harimau& h){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Harimau::~Harimau() {}
+
+Harimau& Harimau::operator=(const Harimau& hm) {}
+
+void Harimau::Eat() const{}
+
+//Implementasi Singa
+Singa::Singa(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Singa::Singa(const Singa& s){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Singa::~Singa() {}
+
+Singa& Singa::operator=(const Singa& sm) {}
+
+void Singa::Eat() const{}
+
+//Implementasi Jerapah
+Jerapah::Jerapah(int weight, int tipe, int tamed) {
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Jerapah::Jerapah(const Jerapah& j){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Jerapah::~Jerapah() {}
+
+Jerapah& Jerapah::operator=(const Jerapah& jm) {}
+
+void Jerapah::Eat() const{}
+
+//Implementasi Okapi
+Okapi::Okapi(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Okapi::Okapi(const Okapi& o){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Okapi::~Okapi(){}
+
+Okapi& Okapi::operator=(const Okapi& om) {}
+
+void Okapi::Eat() const{}
+
+//Implementasi Panda
+Panda::Panda(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Panda::Panda(const Panda& p){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Panda::~Panda(){}
+
+Panda& Panda::operator=(const Panda& pm) {}
+
+void Panda::Eat() const{}
+
+//Implementasi Beruang
+Beruang::Beruang(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Beruang::Beruang(const Beruang& b){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Beruang::~Beruang(){}
+
+Beruang& Beruang::operator=(const Beruang& bm) {}
+
+void Beruang::Eat() const{}
+
+//Implementasi Zebra
+Zebra::Zebra(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Zebra::Zebra(const Zebra& z){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Zebra::~Zebra(){}
+
+Zebra& Zebra::operator=(const Zebra& zm) {}
+
+void Zebra::Eat() const{}
+
+//Implementasi Kuda
+Kuda::Kuda(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Kuda::Kuda(const Kuda& k){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Kuda::~Kuda(){}
+
+Kuda& Kuda::operator=(const Kuda& km) {}
+
+void Kuda::Eat() const{}
 
 
-//Felidae
+/****************WATER ANIMAL*****************/
+//Impelemntasi Ebosia
+Ebosia::Ebosia(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
 
-//ctor
-Felidae::Felidae() {}
+Ebosia::Ebosia(const Ebosia& e){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
 
-//cctor
-Felidae::Felidae(const Felidae& f) {}
+Ebosia::~Ebosia(){}
 
-//dtor
-virtual Felidae::~Felidae() {}
+Ebosia& Ebosia::operator=(const Ebosia& em) {}
 
-//operator=
-Felidae& Felidae::operator=(const Felidae& fm) {}
+void Ebosia::Eat() const{}
 
-//method eat
-virtual void Felidae::Eat() {}
+//Implementasi Lionfish
+Lionfish::Lionfish(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Lionfish::Lionfish(const Lionfish& l){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Lionfish::~Lionfish(){}
+
+Lionfish& Lionfish::operator=(const Lionfish& lm) {}
+
+void Lionfish::Eat() const{}
+
+//Implementasi LumbaLumba
+LumbaLumba::LumbaLumba(int weight, int tipe, int tamed) {
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+LumbaLumba::LumbaLumba(const LumbaLumba& l){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+LumbaLumba::~LumbaLumba(){}
+
+LumbaLumba& LumbaLumba::operator=(const LumbaLumba& lm) {}
+
+void LumbaLumba::Eat() const{}
+
+//Implementasi HiuPutih
+HiuPutih::HiuPutih(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+HiuPutih::HiuPutih(const HiuPutih& h){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+HiuPutih::~HiuPutih(){}
+
+HiuPutih& HiuPutih::operator=(const HiuPutih& hm) {}
+
+void HiuPutih::Eat() const{}
+
+//Implementasi BigBlueOct
+BigBlueOct::BigBlueOct(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+BigBlueOct::BigBlueOct(const BigBlueOct& b){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+BigBlueOct::~BigBlueOct(){}
+
+BigBlueOct& BigBlueOct::operator=(const BigBlueOct& bm) {}
+
+void BigBlueOct::Eat() const{}
+
+//Implementasi EastPacRedOct
+EastPacRedOct::EastPacRedOct(int weight, int tipe, int tamed) {
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+EastPacRedOct::EastPacRedOct(const EastPacRedOct& e){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+EastPacRedOct::~EastPacRedOct(){}
+
+EastPacRedOct& EastPacRedOct::operator=(const EastPacRedOct& em) {}
+
+void EastPacRedOct::Eat() const{}
+
+
+/****************AIR ANIMAL*****************/
+//Implementasi Merpati
+Merpati::Merpati(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Merpati::Merpati(const Merpati& m){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Merpati::~Merpati(){}
+
+Merpati& Merpati::operator=(const Merpati& mm) {}
+
+void Merpati::Eat() const{}
+
+//Impelementasi Rajawali
+Rajawali::Rajawali(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Rajawali::Rajawali(const Rajawali& r){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Rajawali::~Rajawali(){}
+
+Rajawali& Rajawali::operator=(const Rajawali& rm) {}
+
+void Rajawali::Eat() const{}
+
+//Impelementasi Elang
+Elang::Elang(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Elang::Elang(const Elang& e){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Elang::~Elang(){}
+
+Elang& Elang::operator=(const Elang& em) {}
+
+void Elang::Eat() const{}
+
+//Implementasi Kelelawar
+Kelelawar::Kelelawar(int weight, int tipe, int tamed) {
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Kelelawar::Kelelawar(const Kelelawar& k){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Kelelawar::~Kelelawar(){}
+
+Kelelawar& Kelelawar::operator=(const Kelelawar& km) {}
+
+void Kelelawar::Eat() const{}
+
+//Implementasi Cendrawasih
+Cendrawasih::Cendrawasih(int weight, int tipe, int tamed){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+}
+
+Cendrawasih::Cendrawasih(const Cendrawasih& c){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+} 
+
+Cendrawasih::~Cendrawasih(){}
+
+Cendrawasih& Cendrawasih::operator=(const Cendrawasih& cm) {}
+
+void Cendrawasih::Eat() const{}
+

@@ -7,10 +7,21 @@
 //Class Animal dan turunannya (famili animal dan tipe animal)
 class Animal {
   public :
-  	virtual void Eat() const = 0;
-  private :
+  	 virtual void Eat() const = 0;
+
+  	//getter
+  	int getWeight() {return animal_weight;};
+  	int getTipe() {return animal_tipe;};
+  	int getTamed() {return animal_tamed;};
+
+  	//setter
+  	void setWeight(int n) {animal_weight = n;};
+  	void setTipe(int n) {animal_tipe = n;};
+  	void setTamed(int n) {animal_tamed = n;};
+  
+  protected :
   	int animal_weight;
-	int animal_type;		
+	int animal_tipe;		
 	int animal_tamed;
 };
 
@@ -20,7 +31,7 @@ class LandAnimal : public Animal {
 		LandAnimal();
 
 		//ctor dengan parameter
-		LandAnimal(int weigth, int type, int tamed);
+		LandAnimal(int weigth, int tipe, int tamed);
 
 		//cctor
 		LandAnimal(const LandAnimal& la);
@@ -32,7 +43,7 @@ class LandAnimal : public Animal {
 		LandAnimal& operator=(const LandAnimal& lam);
 
 		//deklarasi polimorfik 
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class AirAnimal : public Animal {
@@ -41,7 +52,7 @@ class AirAnimal : public Animal {
 		AirAnimal();
 
 		//ctor dengan parameter
-		AirAnimal(int weight, int type, int tamed);
+		AirAnimal(int weight, int tipe, int tamed);
 
 		//cctor
 		AirAnimal(const AirAnimal& aa);
@@ -53,7 +64,7 @@ class AirAnimal : public Animal {
 		AirAnimal& operator=(const AirAnimal& aam);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class WaterAnimal : public Animal {
@@ -62,7 +73,7 @@ class WaterAnimal : public Animal {
 		WaterAnimal();
 
 		//ctor dengan parameter
-		WaterAnimal(int weight, int type, int tamed);
+		WaterAnimal(int weight, int tipe, int tamed);
 
 		//cctor
 		WaterAnimal(const WaterAnimal& wa);
@@ -74,7 +85,7 @@ class WaterAnimal : public Animal {
 		WaterAnimal& operator=(const WaterAnimal& wam);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 
@@ -87,7 +98,7 @@ class Felidae : public LandAnimal {
 		Felidae();
 
 		//ctor dengan parameter
-		Felidae(int weight,int type,int tamed);
+		Felidae(int weight,int tipe,int tamed);
 
 		//cctor
 		Felidae(const Felidae& f);
@@ -99,7 +110,7 @@ class Felidae : public LandAnimal {
 		Felidae& operator=(const Felidae& fm);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Giraffidae : public LandAnimal {
@@ -108,10 +119,10 @@ class Giraffidae : public LandAnimal {
 		Giraffidae();
 
 		//ctor dengan parameter
-		Giraffidae(int weight,int type,int tamed);
+		Giraffidae(int weight,int tipe,int tamed);
 
 		//cctor
-		Giraffidae(const Felidae& g);
+		Giraffidae(const Giraffidae& g);
 
 		//dtor
 		~Giraffidae();
@@ -120,7 +131,7 @@ class Giraffidae : public LandAnimal {
 		Giraffidae& operator=(const Giraffidae& gm);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Ursidae : public LandAnimal {
@@ -129,7 +140,7 @@ class Ursidae : public LandAnimal {
 		Ursidae();
 
 		//ctor dengan parameter
-		Ursidae(int weight,int type,int tamed);
+		Ursidae(int weight,int tipe,int tamed);
 
 		//cctor
 		Ursidae(const Ursidae& u);
@@ -141,7 +152,7 @@ class Ursidae : public LandAnimal {
 		Ursidae& operator=(const Ursidae& um);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Equidae : public LandAnimal {
@@ -150,7 +161,7 @@ class Equidae : public LandAnimal {
 		Equidae();
 
 		//ctor dengan parameter
-		Equidae(int weight,int type,int tamed);
+		Equidae(int weight,int tipe,int tamed);
 
 		//cctor
 		Equidae(const Equidae& e);
@@ -162,7 +173,7 @@ class Equidae : public LandAnimal {
 		Equidae& operator=(const Equidae& em);
 
 		//deklasari polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Scorpaenidae : public WaterAnimal {
@@ -171,7 +182,7 @@ class Scorpaenidae : public WaterAnimal {
 		Scorpaenidae();
 
 		//ctor dengan parameter
-		Scorpaenidae(int weight,int type,int tamed);
+		Scorpaenidae(int weight,int tipe,int tamed);
 
 		//cctor
 		Scorpaenidae(const Scorpaenidae& s);
@@ -183,7 +194,7 @@ class Scorpaenidae : public WaterAnimal {
 		Scorpaenidae& operator=(const Scorpaenidae& sm);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Delphidae : public WaterAnimal {
@@ -192,7 +203,7 @@ class Delphidae : public WaterAnimal {
 		Delphidae();
 
 		//ctor dengan parameter
-		Delphidae(int weight,int type,int tamed);
+		Delphidae(int weight,int tipe,int tamed);
 
 		//cctor
 		Delphidae(const Delphidae& d);
@@ -204,7 +215,7 @@ class Delphidae : public WaterAnimal {
 		Delphidae& operator=(const Delphidae& dm);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Selachii : public WaterAnimal {
@@ -213,16 +224,19 @@ class Selachii : public WaterAnimal {
 		Selachii();
 
 		//ctor
-		Selachii(int weight,int type,int tamed);
+		Selachii(int weight,int tipe,int tamed);
 
 		//cctor
 		Selachii(const Selachii& s);
+
+		//dtor
+		~Selachii();
 
 		//operator=
 		Selachii& operator=(const Selachii& sm);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Octopodiae : public WaterAnimal {
@@ -231,16 +245,19 @@ class Octopodiae : public WaterAnimal {
 		Octopodiae();
 
 		//ctor dengan parameter
-		Octopodiae(int weight,int type,int tamed);
+		Octopodiae(int weight,int tipe,int tamed);
 
 		//cctor
 		Octopodiae(const Octopodiae& o);
+
+		//dtor
+		~Octopodiae();
 
 		//operator=
 		Octopodiae& operator=(const Octopodiae& om);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Columbidae : public AirAnimal {
@@ -249,16 +266,19 @@ class Columbidae : public AirAnimal {
 		Columbidae();
 
 		//ctor dengan parameter
-		Columbidae(int weight,int type,int tamed);
+		Columbidae(int weight,int tipe,int tamed);
 
 		//cctor
 		Columbidae(const Columbidae& c);
+
+		//dtor
+		~Columbidae();
 
 		//operator=
 		Columbidae& operator=(const Columbidae& cm);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Accipitridae : public AirAnimal {
@@ -267,16 +287,19 @@ class Accipitridae : public AirAnimal {
 		Accipitridae();
 
 		//ctor dengan parameter
-		Accipitridae(int weight,int type,int tamed);
+		Accipitridae(int weight,int tipe,int tamed);
 
 		//cctor
 		Accipitridae(const Accipitridae& a);
+
+		//dtor
+		~Accipitridae();
 
 		//operator=
 		Accipitridae& operator=(const Accipitridae& am);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Molossidae : public AirAnimal {
@@ -285,16 +308,19 @@ class Molossidae : public AirAnimal {
 		Molossidae();
 
 		//ctor dengan parameter
-		Molossidae(int weight,int type,int tamed);
+		Molossidae(int weight,int tipe,int tamed);
 
 		//cctor
 		Molossidae(const Molossidae& m);
+
+		//dtor
+		~Molossidae();
 
 		//operator=
 		Molossidae& operator=(const Molossidae& mm);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 class Paradisaeidae : public AirAnimal {
@@ -303,16 +329,19 @@ class Paradisaeidae : public AirAnimal {
 		Paradisaeidae();
 
 		//ctor dengan parameter
-		Paradisaeidae(int weight,int type,int tamed);
+		Paradisaeidae(int weight,int tipe,int tamed);
 
 		//cctor
 		Paradisaeidae(const Paradisaeidae& p);
+
+		//dtor
+		~Paradisaeidae();
 
 		//operator=
 		Paradisaeidae& operator=(const Paradisaeidae& pm);
 
 		//deklarasi polimorfik
-		virtual void Eat();
+		virtual void Eat() const;
 };
 
 
@@ -323,8 +352,9 @@ class Paradisaeidae : public AirAnimal {
 /****************LAND ANIMAL*****************/
 class Kucing : public Felidae {
 	public :
+		Kucing();
 		//ctor dengan parameter
-		Kucing(int weight, int type, int tamed);
+		Kucing(int weight, int tipe, int tamed);
 
 		//cctor
 		Kucing(const Kucing& k);
@@ -336,13 +366,13 @@ class Kucing : public Felidae {
 		Kucing& operator=(const Kucing& km);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Harimau : public Felidae {
 	public :
 		//ctor dengan parameter
-		Harimau(int weight, int type, int tamed);
+		Harimau(int weight, int tipe, int tamed);
 
 		//cctor
 		Harimau(const Harimau& h);
@@ -354,13 +384,13 @@ class Harimau : public Felidae {
 		Harimau& operator=(const Harimau& hm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Singa : public Felidae {
 	public :
 		//ctor dengan parameter
-		Singa(int weight, int type, int tamed);
+		Singa(int weight, int tipe, int tamed);
 
 		//cctor 
 		Singa(const Singa& s);
@@ -372,13 +402,13 @@ class Singa : public Felidae {
 		Singa& operator=(const Singa& sm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Jerapah : public Giraffidae {
 	public :
 		//ctor dengan parameter
-		Jerapah(int weight, int type, int tamed);
+		Jerapah(int weight, int tipe, int tamed);
 
 		//cctor
 		Jerapah(const Jerapah& j);
@@ -390,13 +420,13 @@ class Jerapah : public Giraffidae {
 		Jerapah& operator=(const Jerapah& jm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Okapi : public Giraffidae {
 	public :
 		//ctor dengan parameter
-		Okapi(int weight, int type, int tamed);
+		Okapi(int weight, int tipe, int tamed);
 
 		//cctor
 		Okapi(const Okapi& o);
@@ -408,13 +438,13 @@ class Okapi : public Giraffidae {
 		Okapi& operator=(const Okapi& om);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Panda : public Ursidae {
 	public :
 		//ctor dengan parameter
-		Panda(int weight, int type, int tamed);
+		Panda(int weight, int tipe, int tamed);
 
 		//cctor
 		Panda(const Panda& p);
@@ -426,13 +456,13 @@ class Panda : public Ursidae {
 		Panda& operator=(const Panda& pm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Beruang : public Ursidae {
 	public :
 		//ctor dengan parameter
-		Beruang(int weight, int type, int tamed);
+		Beruang(int weight, int tipe, int tamed);
 
 		//cctor
 		Beruang(const Beruang& b);
@@ -444,13 +474,13 @@ class Beruang : public Ursidae {
 		Beruang& operator=(const Beruang& bm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Zebra : public Equidae {
 	public :
 		//ctor dengan parameter
-		Zebra(int weight, int type, int tamed);
+		Zebra(int weight, int tipe, int tamed);
 
 		//cctor
 		Zebra(const Zebra& z);
@@ -462,13 +492,13 @@ class Zebra : public Equidae {
 		Zebra& operator=(const Zebra& zm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Kuda : public Equidae {
 	public :
 		//ctor dengan parameter
-		Kuda(int weight, int type, int tamed);
+		Kuda(int weight, int tipe, int tamed);
 
 		//cctor
 		Kuda(const Kuda& k);
@@ -480,14 +510,14 @@ class Kuda : public Equidae {
 		Kuda& operator=(const Kuda& km);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 /****************WATER ANIMAL*****************/
 class Ebosia : public Scorpaenidae {
 	public :
 		//ctor dengan parameter
-		Ebosia(int weight, int type, int tamed);
+		Ebosia(int weight, int tipe, int tamed);
 
 		//cctor
 		Ebosia(const Ebosia& e);
@@ -499,14 +529,14 @@ class Ebosia : public Scorpaenidae {
 		Ebosia& operator=(const Ebosia& e);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 
 };
 
 class Lionfish : public Scorpaenidae {
 	public :
 		//ctor dengan parameter
-		Lionfish(int weight, int type, int tamed);
+		Lionfish(int weight, int tipe, int tamed);
 
 		//cctor
 		Lionfish(const Lionfish& l);
@@ -518,13 +548,13 @@ class Lionfish : public Scorpaenidae {
 		Lionfish& operator=(const Lionfish& lm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class LumbaLumba : public Delphidae {
 	public :
 		//ctor dengan parameter
-		LumbaLumba(int weight, int type, int tamed);
+		LumbaLumba(int weight, int tipe, int tamed);
 
 		//cctor
 		LumbaLumba(const LumbaLumba& l);
@@ -536,13 +566,13 @@ class LumbaLumba : public Delphidae {
 		LumbaLumba& operator=(const LumbaLumba& lm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class HiuPutih : public Selachii {
 	public :
 		//ctor dengan parameter
-		HiuPutih(int weight, int type, int tamed);
+		HiuPutih(int weight, int tipe, int tamed);
 
 		//cctor
 		HiuPutih(const HiuPutih& h);
@@ -554,13 +584,13 @@ class HiuPutih : public Selachii {
 		HiuPutih& operator=(const HiuPutih& hm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class BigBlueOct : public Octopodiae {
 	public :
 		//ctor dengan parameter
-		BigBlueOct(int weight, int type, int tamed);
+		BigBlueOct(int weight, int tipe, int tamed);
 
 		//cctor
 		BigBlueOct(const BigBlueOct& b);
@@ -572,13 +602,13 @@ class BigBlueOct : public Octopodiae {
 		BigBlueOct& operator=(const BigBlueOct& bm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class EastPacRedOct : public Octopodiae {
 	public :
 		//ctor dengan parameter
-		EastPacRedOct(int weight, int type, int tamed);
+		EastPacRedOct(int weight, int tipe, int tamed);
 
 		//cctor
 		EastPacRedOct(const EastPacRedOct& e);
@@ -590,14 +620,14 @@ class EastPacRedOct : public Octopodiae {
 		EastPacRedOct& operator=(const EastPacRedOct& em);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 /****************AIR ANIMAL*****************/
 class Merpati : public Columbidae {
 	public :
 		//ctor dengan parameter
-		Merpati(int weight, int type, int tamed);
+		Merpati(int weight, int tipe, int tamed);
 
 		//cctor
 		Merpati(const Merpati& m);
@@ -609,13 +639,13 @@ class Merpati : public Columbidae {
 		Merpati& operator=(const Merpati& mm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Rajawali : public Accipitridae {
 	public :
 		//ctor dengan parameter
-		Rajawali(int weight, int type, int tamed);
+		Rajawali(int weight, int tipe, int tamed);
 
 		//cctor
 		Rajawali(const Rajawali& r);
@@ -627,13 +657,13 @@ class Rajawali : public Accipitridae {
 		Rajawali& operator=(const Rajawali& rm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Elang : public Accipitridae {
 	public :
 		//ctor dengan parameter
-		Elang(int weight, int type, int tamed);
+		Elang(int weight, int tipe, int tamed);
 
 		//cctor
 		Elang(const Elang& e);
@@ -645,13 +675,13 @@ class Elang : public Accipitridae {
 		Elang& operator=(const Elang& em);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 class Kelelawar : public Molossidae {
 	public :
 		//ctor dengan parameter
-		Kelelawar(int weight, int type, int tamed);
+		Kelelawar(int weight, int tipe, int tamed);
 
 		//cctor
 		Kelelawar(const Kelelawar& k);
@@ -663,14 +693,14 @@ class Kelelawar : public Molossidae {
 		Kelelawar& operator=(const Kelelawar& km);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 
 };
 
 class Cendrawasih : public Paradisaeidae {
 	public :
 		//ctor dengan parameter
-		Cendrawasih(int weight, int type, int tamed);
+		Cendrawasih(int weight, int tipe, int tamed);
 
 		//cctor
 		Cendrawasih(const Cendrawasih& c);
@@ -682,7 +712,7 @@ class Cendrawasih : public Paradisaeidae {
 		Cendrawasih& operator=(const Cendrawasih& cm);
 
 		//deklarasi polimorfik
-		void Eat();
+		virtual void Eat() const;
 };
 
 #endif
