@@ -6,7 +6,7 @@ using namespace std;
 /******************/
 /*DEFINISI  ANIMAL*/
 /******************/
-//ini komen
+
 //Tidak direalisasikan karena kelas ABC
 
 //ctor tanpa parameter
@@ -19,7 +19,7 @@ LandAnimal::LandAnimal(){
 }
 
 //ctor dengan parameter
-LandAnimal::LandAnimal(int weight, int tipe, int tamed,int x,int y) {
+LandAnimal::LandAnimal(int weight, int tipe, bool tamed,int x,int y) {
 	animal_weight = weight;
 	animal_tipe = tipe;
 	animal_tamed = tamed;
@@ -51,6 +51,19 @@ LandAnimal& LandAnimal::operator=(const LandAnimal& lam) {
 //method eat
 void LandAnimal::Eat() const {}
 
+//Realisasi getter
+int LandAnimal::getWeight() {return animal_weight;}
+int LandAnimal::getTipe() 	{return animal_tipe;}
+int LandAnimal::getTamed()	{return animal_tamed;}
+int LandAnimal::getX()		{return location_x;}
+int LandAnimal::getY()		{return location_y;}
+
+//Realisasi setter
+void LandAnimal::setWeight(int n)	{animal_weight = n;}
+void LandAnimal::setTipe(int n)		{animal_tipe = n;}
+void LandAnimal::setTamed(int n)	{animal_tamed = n;}
+void LandAnimal::setX(int x)		{location_x = x;}
+void LandAnimal::setY(int y)		{location_y = y;}
 
 //Air Animal
 
@@ -64,7 +77,7 @@ AirAnimal::AirAnimal(){
 }
 
 //ctor dengan parameter
-AirAnimal::AirAnimal(int weight, int tipe, int tamed,int x,int y){
+AirAnimal::AirAnimal(int weight, int tipe, bool tamed,int x,int y){
 	animal_weight = weight;
 	animal_tipe = tipe;
 	animal_tamed = tamed;
@@ -96,6 +109,19 @@ AirAnimal& AirAnimal::operator=(const AirAnimal& aam) {
 //method eat
 void AirAnimal::Eat() const {}
 
+//Realisasi getter
+int AirAnimal::getWeight() 	{return animal_weight;}
+int AirAnimal::getTipe() 	{return animal_tipe;}
+int AirAnimal::getTamed()	{return animal_tamed;}
+int AirAnimal::getX()		{return location_x;}
+int AirAnimal::getY()		{return location_y;}
+
+//Realisasi setter
+void AirAnimal::setWeight(int n)	{animal_weight = n;}
+void AirAnimal::setTipe(int n)		{animal_tipe = n;}
+void AirAnimal::setTamed(int n)	{animal_tamed = n;}
+void AirAnimal::setX(int x)		{location_x = x;}
+void AirAnimal::setY(int y)		{location_y = y;}
 
 //Water Animal
 
@@ -109,7 +135,7 @@ WaterAnimal::WaterAnimal(){
 }
 
 //ctor dengan parameter
-WaterAnimal::WaterAnimal(int weight, int tipe, int tamed,int x,int y){
+WaterAnimal::WaterAnimal(int weight, int tipe, bool tamed,int x,int y){
 	animal_weight = weight;
 	animal_tipe = tipe;
 	animal_tamed = tamed;
@@ -142,6 +168,19 @@ WaterAnimal& WaterAnimal::operator=(const WaterAnimal& wam) {
 void WaterAnimal::Eat() const {}
 
 
+//Realisasi getter
+int WaterAnimal::getWeight() {return animal_weight;}
+int WaterAnimal::getTipe() 	{return animal_tipe;}
+int WaterAnimal::getTamed()	{return animal_tamed;}
+int WaterAnimal::getX()		{return location_x;}
+int WaterAnimal::getY()		{return location_y;}
+
+//Realisasi setter
+void WaterAnimal::setWeight(int n)	{animal_weight = n;}
+void WaterAnimal::setTipe(int n)		{animal_tipe = n;}
+void WaterAnimal::setTamed(int n)	{animal_tamed = n;}
+void WaterAnimal::setX(int x)		{location_x = x;}
+void WaterAnimal::setY(int y)		{location_y = y;}
 
 /*************************/
 /*DEFINISI  FAMILI ANIMAL*/
@@ -156,7 +195,7 @@ Felidae::Felidae(){
 	setY(0);
 }
 
-Felidae::Felidae(int weight,int tipe,int tamed,int x,int y){
+Felidae::Felidae(int weight,int tipe,bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -187,7 +226,7 @@ Giraffidae::Giraffidae(){
 	setY(0);
 }
 
-Giraffidae::Giraffidae(int weight,int tipe,int tamed,int x,int y){
+Giraffidae::Giraffidae(int weight,int tipe,bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -218,7 +257,7 @@ Ursidae::Ursidae(){
 	setY(0);
 }
 
-Ursidae::Ursidae(int weight,int tipe,int tamed,int x,int y){
+Ursidae::Ursidae(int weight,int tipe,bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -250,7 +289,7 @@ Equidae::Equidae(){
 	setY(0);
 }
 
-Equidae::Equidae(int weight,int tipe,int tamed,int x,int y){
+Equidae::Equidae(int weight,int tipe,bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -281,7 +320,7 @@ Scorpaenidae::Scorpaenidae(){
 	setY(0);
 }
 
-Scorpaenidae::Scorpaenidae(int weight,int tipe,int tamed,int x,int y) {
+Scorpaenidae::Scorpaenidae(int weight,int tipe,bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -312,7 +351,7 @@ Delphidae::Delphidae(){
 	setY(0);
 }
 
-Delphidae::Delphidae(int weight,int tipe,int tamed,int x,int y){
+Delphidae::Delphidae(int weight,int tipe,bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -343,7 +382,7 @@ Selachii::Selachii(){
 	setY(0);
 }
 
-Selachii::Selachii(int weight,int tipe,int tamed,int x,int y){
+Selachii::Selachii(int weight,int tipe,bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -374,7 +413,7 @@ Octopodiae::Octopodiae(){
 	setY(0);
 }
 
-Octopodiae::Octopodiae(int weight,int tipe,int tamed,int x,int y) {
+Octopodiae::Octopodiae(int weight,int tipe,bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -405,7 +444,7 @@ Columbidae::Columbidae(){
 	setY(0);
 }
 
-Columbidae::Columbidae(int weight,int tipe,int tamed,int x,int y) {
+Columbidae::Columbidae(int weight,int tipe,bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -436,7 +475,7 @@ Accipitridae::Accipitridae(){
 	setY(0);
 }
 
-Accipitridae::Accipitridae(int weight,int tipe,int tamed,int x,int y) {
+Accipitridae::Accipitridae(int weight,int tipe,bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -467,7 +506,7 @@ Molossidae::Molossidae(){
 	setY(0);
 }
 
-Molossidae::Molossidae(int weight,int tipe,int tamed,int x,int y) {
+Molossidae::Molossidae(int weight,int tipe,bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -498,7 +537,7 @@ Paradisaeidae::Paradisaeidae(){
 	setY(0);
 }
 
-Paradisaeidae::Paradisaeidae(int weight,int tipe,int tamed,int x,int y){
+Paradisaeidae::Paradisaeidae(int weight,int tipe,bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -534,7 +573,7 @@ Kucing::Kucing() {
 	setY(0);
 }
 
-Kucing::Kucing(int weight, int tipe, int tamed,int x,int y){
+Kucing::Kucing(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -557,7 +596,7 @@ Kucing& Kucing::operator=(const Kucing& km) {}
 void Kucing::Eat() const{}
 
 //Implementasi Harimau
-Harimau::Harimau(int weight, int tipe, int tamed,int x,int y) {
+Harimau::Harimau(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -580,7 +619,7 @@ Harimau& Harimau::operator=(const Harimau& hm) {}
 void Harimau::Eat() const{}
 
 //Implementasi Singa
-Singa::Singa(int weight, int tipe, int tamed,int x,int y){
+Singa::Singa(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -603,7 +642,7 @@ Singa& Singa::operator=(const Singa& sm) {}
 void Singa::Eat() const{}
 
 //Implementasi Jerapah
-Jerapah::Jerapah(int weight, int tipe, int tamed,int x,int y) {
+Jerapah::Jerapah(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -626,7 +665,7 @@ Jerapah& Jerapah::operator=(const Jerapah& jm) {}
 void Jerapah::Eat() const{}
 
 //Implementasi Okapi
-Okapi::Okapi(int weight, int tipe, int tamed,int x,int y){
+Okapi::Okapi(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -649,7 +688,7 @@ Okapi& Okapi::operator=(const Okapi& om) {}
 void Okapi::Eat() const{}
 
 //Implementasi Panda
-Panda::Panda(int weight, int tipe, int tamed,int x,int y){
+Panda::Panda(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -672,7 +711,7 @@ Panda& Panda::operator=(const Panda& pm) {}
 void Panda::Eat() const{}
 
 //Implementasi Beruang
-Beruang::Beruang(int weight, int tipe, int tamed,int x,int y){
+Beruang::Beruang(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -695,7 +734,7 @@ Beruang& Beruang::operator=(const Beruang& bm) {}
 void Beruang::Eat() const{}
 
 //Implementasi Zebra
-Zebra::Zebra(int weight, int tipe, int tamed,int x,int y){
+Zebra::Zebra(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -718,7 +757,7 @@ Zebra& Zebra::operator=(const Zebra& zm) {}
 void Zebra::Eat() const{}
 
 //Implementasi Kuda
-Kuda::Kuda(int weight, int tipe, int tamed,int x,int y){
+Kuda::Kuda(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -743,7 +782,7 @@ void Kuda::Eat() const{}
 
 /****************WATER ANIMAL*****************/
 //Impelemntasi Ebosia
-Ebosia::Ebosia(int weight, int tipe, int tamed,int x,int y){
+Ebosia::Ebosia(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -766,7 +805,7 @@ Ebosia& Ebosia::operator=(const Ebosia& em) {}
 void Ebosia::Eat() const{}
 
 //Implementasi Lionfish
-Lionfish::Lionfish(int weight, int tipe, int tamed,int x,int y){
+Lionfish::Lionfish(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -789,7 +828,7 @@ Lionfish& Lionfish::operator=(const Lionfish& lm) {}
 void Lionfish::Eat() const{}
 
 //Implementasi LumbaLumba
-LumbaLumba::LumbaLumba(int weight, int tipe, int tamed,int x,int y) {
+LumbaLumba::LumbaLumba(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -812,7 +851,7 @@ LumbaLumba& LumbaLumba::operator=(const LumbaLumba& lm) {}
 void LumbaLumba::Eat() const{}
 
 //Implementasi HiuPutih
-HiuPutih::HiuPutih(int weight, int tipe, int tamed,int x,int y){
+HiuPutih::HiuPutih(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -835,7 +874,7 @@ HiuPutih& HiuPutih::operator=(const HiuPutih& hm) {}
 void HiuPutih::Eat() const{}
 
 //Implementasi BigBlueOct
-BigBlueOct::BigBlueOct(int weight, int tipe, int tamed,int x,int y){
+BigBlueOct::BigBlueOct(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -858,7 +897,7 @@ BigBlueOct& BigBlueOct::operator=(const BigBlueOct& bm) {}
 void BigBlueOct::Eat() const{}
 
 //Implementasi EastPacRedOct
-EastPacRedOct::EastPacRedOct(int weight, int tipe, int tamed,int x,int y) {
+EastPacRedOct::EastPacRedOct(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -883,7 +922,7 @@ void EastPacRedOct::Eat() const{}
 
 /****************AIR ANIMAL*****************/
 //Implementasi Merpati
-Merpati::Merpati(int weight, int tipe, int tamed,int x,int y){
+Merpati::Merpati(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -906,7 +945,7 @@ Merpati& Merpati::operator=(const Merpati& mm) {}
 void Merpati::Eat() const{}
 
 //Impelementasi Rajawali
-Rajawali::Rajawali(int weight, int tipe, int tamed,int x,int y){
+Rajawali::Rajawali(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -929,7 +968,7 @@ Rajawali& Rajawali::operator=(const Rajawali& rm) {}
 void Rajawali::Eat() const{}
 
 //Impelementasi Elang
-Elang::Elang(int weight, int tipe, int tamed,int x,int y){
+Elang::Elang(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -952,7 +991,7 @@ Elang& Elang::operator=(const Elang& em) {}
 void Elang::Eat() const{}
 
 //Implementasi Kelelawar
-Kelelawar::Kelelawar(int weight, int tipe, int tamed,int x,int y) {
+Kelelawar::Kelelawar(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
@@ -975,7 +1014,7 @@ Kelelawar& Kelelawar::operator=(const Kelelawar& km) {}
 void Kelelawar::Eat() const{}
 
 //Implementasi Cendrawasih
-Cendrawasih::Cendrawasih(int weight, int tipe, int tamed,int x,int y){
+Cendrawasih::Cendrawasih(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
 	setTamed(tamed);
