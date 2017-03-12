@@ -5,23 +5,23 @@
 /*DEKLARASI ANIMAL*/
 /******************/
 //Class Animal dan turunannya (famili animal dan tipe animal)
-class Animal {
+class Animal{
   public :
   	virtual void Eat() const = 0;
 
   	//getter
-  	virtual int getWeight();
-  	virtual int getTipe();
-  	virtual int getTamed();
-  	virtual int getX();
-  	virtual int getY();
+  	virtual int getWeight(){return animal_weight;};
+  	virtual int getTipe(){return animal_tipe;};
+  	virtual bool getTamed(){return animal_tamed;};
+  	virtual int getX(){return location_x;};
+  	virtual int getY(){return location_y;};
 
   	//setter
-  	virtual void setWeight(int );
-  	virtual void setTipe(int );
-  	virtual void setTamed(int );
-  	virtual void setX(int );
-  	virtual void setY(int );
+  	virtual void setWeight(int ){};
+  	virtual void setTipe(int ){};
+  	virtual void setTamed(bool ){};
+  	virtual void setX(int ){};
+  	virtual void setY(int ){};
 
   	int location_x;
 	int location_y;
@@ -49,21 +49,21 @@ class LandAnimal : public Animal {
 		LandAnimal& operator=(const LandAnimal& lam);
 
 		//deklarasi polimorfik 
-		virtual void Eat() const;
+		virtual void Eat() ;
 
-	//getter
-  	virtual int getWeight() override;
-  	virtual int getTipe() override;
-  	virtual int getTamed() override;
-  	virtual int getX() override;
-  	virtual int getY() override;
+  	//Realisasi getter
+	virtual int getWeight() 	{return animal_weight;}
+	virtual int getTipe() 		{return animal_tipe;}
+	virtual bool getTamed()		{return animal_tamed;}
+	virtual int getX()			{return location_x;}
+	virtual int getY()			{return location_y;}
 
-  	//setter
-  	virtual void setWeight(int ) override;
-  	virtual void setTipe(int ) override;
-  	virtual void setTamed(int ) override;
-  	virtual void setX(int ) override;
-  	virtual void setY(int ) override;
+	//Realisasi setter
+	void setWeight(int n)	{animal_weight = n;}
+	void setTipe(int n)		{animal_tipe = n;}
+	void setTamed(bool n)	{animal_tamed = n;}
+	void setX(int x)		{location_x = x;}
+	void setY(int y)		{location_y = y;}
 };
 
 class AirAnimal : public Animal {
@@ -84,21 +84,21 @@ class AirAnimal : public Animal {
 		AirAnimal& operator=(const AirAnimal& aam);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat() ;
 
-	//getter
-  	virtual int getWeight() override;
-  	virtual int getTipe() override;
-  	virtual int getTamed() override;
-  	virtual int getX() override;
-  	virtual int getY() override;
+	//Realisasi getter
+	virtual int getWeight() 	{return animal_weight;}
+	virtual int getTipe() 		{return animal_tipe;}
+	virtual bool getTamed()		{return animal_tamed;}
+	virtual int getX()			{return location_x;}
+	virtual int getY()			{return location_y;}
 
-  	//setter
-  	virtual void setWeight(int ) override;
-  	virtual void setTipe(int ) override;
-  	virtual void setTamed(int ) override;
-  	virtual void setX(int ) override;
-  	virtual void setY(int ) override;
+	//Realisasi setter
+	void setWeight(int n)	{animal_weight = n;}
+	void setTipe(int n)		{animal_tipe = n;}
+	void setTamed(bool n)	{animal_tamed = n;}
+	void setX(int x)		{location_x = x;}
+	void setY(int y)		{location_y = y;}
 };
 
 class WaterAnimal : public Animal {
@@ -119,21 +119,21 @@ class WaterAnimal : public Animal {
 		WaterAnimal& operator=(const WaterAnimal& wam);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){} ;
 
-	//getter
-  	virtual int getWeight() override;
-  	virtual int getTipe() override;
-  	virtual int getTamed() override;
-  	virtual int getX() override;
-  	virtual int getY() override;
+  	//Realisasi getter
+	virtual int getWeight() 	{return animal_weight;}
+	virtual int getTipe() 		{return animal_tipe;}
+	virtual bool getTamed()		{return animal_tamed;}
+	virtual int getX()			{return location_x;}
+	virtual int getY()			{return location_y;}
 
-  	//setter
-  	virtual void setWeight(int ) override;
-  	virtual void setTipe(int ) override;
-  	virtual void setTamed(int ) override;
-  	virtual void setX(int ) override;
-  	virtual void setY(int ) override;
+	//Realisasi setter
+	void setWeight(int n)	{animal_weight = n;}
+	void setTipe(int n)		{animal_tipe = n;}
+	void setTamed(bool n)	{animal_tamed = n;}
+	void setX(int x)		{location_x = x;}
+	void setY(int y)		{location_y = y;}
 };
 
 
@@ -158,7 +158,7 @@ class Felidae : public LandAnimal {
 		Felidae& operator=(const Felidae& fm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Giraffidae : public LandAnimal {
@@ -179,7 +179,7 @@ class Giraffidae : public LandAnimal {
 		Giraffidae& operator=(const Giraffidae& gm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Ursidae : public LandAnimal {
@@ -200,7 +200,7 @@ class Ursidae : public LandAnimal {
 		Ursidae& operator=(const Ursidae& um);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Equidae : public LandAnimal {
@@ -221,7 +221,7 @@ class Equidae : public LandAnimal {
 		Equidae& operator=(const Equidae& em);
 
 		//deklasari polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Scorpaenidae : public WaterAnimal {
@@ -242,7 +242,7 @@ class Scorpaenidae : public WaterAnimal {
 		Scorpaenidae& operator=(const Scorpaenidae& sm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Delphidae : public WaterAnimal {
@@ -263,7 +263,7 @@ class Delphidae : public WaterAnimal {
 		Delphidae& operator=(const Delphidae& dm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Selachii : public WaterAnimal {
@@ -284,7 +284,7 @@ class Selachii : public WaterAnimal {
 		Selachii& operator=(const Selachii& sm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Octopodiae : public WaterAnimal {
@@ -305,7 +305,7 @@ class Octopodiae : public WaterAnimal {
 		Octopodiae& operator=(const Octopodiae& om);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Columbidae : public AirAnimal {
@@ -326,7 +326,7 @@ class Columbidae : public AirAnimal {
 		Columbidae& operator=(const Columbidae& cm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Accipitridae : public AirAnimal {
@@ -347,7 +347,7 @@ class Accipitridae : public AirAnimal {
 		Accipitridae& operator=(const Accipitridae& am);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Molossidae : public AirAnimal {
@@ -368,7 +368,7 @@ class Molossidae : public AirAnimal {
 		Molossidae& operator=(const Molossidae& mm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Paradisaeidae : public AirAnimal {
@@ -389,7 +389,7 @@ class Paradisaeidae : public AirAnimal {
 		Paradisaeidae& operator=(const Paradisaeidae& pm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 
@@ -414,7 +414,7 @@ class Kucing : public Felidae {
 		Kucing& operator=(const Kucing& km);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Harimau : public Felidae {
@@ -432,7 +432,7 @@ class Harimau : public Felidae {
 		Harimau& operator=(const Harimau& hm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Singa : public Felidae {
@@ -450,7 +450,7 @@ class Singa : public Felidae {
 		Singa& operator=(const Singa& sm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Jerapah : public Giraffidae {
@@ -468,7 +468,7 @@ class Jerapah : public Giraffidae {
 		Jerapah& operator=(const Jerapah& jm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Okapi : public Giraffidae {
@@ -486,7 +486,7 @@ class Okapi : public Giraffidae {
 		Okapi& operator=(const Okapi& om);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Panda : public Ursidae {
@@ -504,7 +504,7 @@ class Panda : public Ursidae {
 		Panda& operator=(const Panda& pm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Beruang : public Ursidae {
@@ -522,7 +522,7 @@ class Beruang : public Ursidae {
 		Beruang& operator=(const Beruang& bm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Zebra : public Equidae {
@@ -540,7 +540,7 @@ class Zebra : public Equidae {
 		Zebra& operator=(const Zebra& zm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Kuda : public Equidae {
@@ -558,7 +558,7 @@ class Kuda : public Equidae {
 		Kuda& operator=(const Kuda& km);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 /****************WATER ANIMAL*****************/
@@ -577,7 +577,7 @@ class Ebosia : public Scorpaenidae {
 		Ebosia& operator=(const Ebosia& e);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 
 };
 
@@ -596,7 +596,7 @@ class Lionfish : public Scorpaenidae {
 		Lionfish& operator=(const Lionfish& lm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class LumbaLumba : public Delphidae {
@@ -614,7 +614,7 @@ class LumbaLumba : public Delphidae {
 		LumbaLumba& operator=(const LumbaLumba& lm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class HiuPutih : public Selachii {
@@ -632,7 +632,7 @@ class HiuPutih : public Selachii {
 		HiuPutih& operator=(const HiuPutih& hm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class BigBlueOct : public Octopodiae {
@@ -650,7 +650,7 @@ class BigBlueOct : public Octopodiae {
 		BigBlueOct& operator=(const BigBlueOct& bm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class EastPacRedOct : public Octopodiae {
@@ -668,7 +668,7 @@ class EastPacRedOct : public Octopodiae {
 		EastPacRedOct& operator=(const EastPacRedOct& em);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 /****************AIR ANIMAL*****************/
@@ -687,7 +687,7 @@ class Merpati : public Columbidae {
 		Merpati& operator=(const Merpati& mm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Rajawali : public Accipitridae {
@@ -705,7 +705,7 @@ class Rajawali : public Accipitridae {
 		Rajawali& operator=(const Rajawali& rm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Elang : public Accipitridae {
@@ -723,7 +723,7 @@ class Elang : public Accipitridae {
 		Elang& operator=(const Elang& em);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 class Kelelawar : public Molossidae {
@@ -741,7 +741,7 @@ class Kelelawar : public Molossidae {
 		Kelelawar& operator=(const Kelelawar& km);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 
 };
 
@@ -760,7 +760,7 @@ class Cendrawasih : public Paradisaeidae {
 		Cendrawasih& operator=(const Cendrawasih& cm);
 
 		//deklarasi polimorfik
-		virtual void Eat() const;
+		virtual void Eat(){};
 };
 
 #endif
