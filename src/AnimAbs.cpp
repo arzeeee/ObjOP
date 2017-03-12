@@ -6,7 +6,7 @@ using namespace std;
 /******************/
 /*DEFINISI  ANIMAL*/
 /******************/
-
+//ini komen
 //Tidak direalisasikan karena kelas ABC
 
 //ctor tanpa parameter
