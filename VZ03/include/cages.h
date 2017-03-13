@@ -21,7 +21,7 @@ public:
 	Cages& operator=(const Cages& cs);
 
 	//method get array
-	int GetArrayCage();
+	Cage GetArrayCage();
 
     //method get neff
     int GetNeff();
