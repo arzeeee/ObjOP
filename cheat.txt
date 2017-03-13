@@ -1,0 +1,4 @@
+sed -i $'s/\t/    /g' *.cpp
+//kalau buat file cpp
+sed -i $'s/\t/    /g' *.h
+//kalau buat file header
