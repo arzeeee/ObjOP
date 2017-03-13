@@ -1,5 +1,5 @@
-#ifndef ANIMABS_H
-#define ANIMABS_H
+#ifndef ANIMAL_H
+#define ANIMAL_H
 
 /******************/
 /*DEKLARASI ANIMAL*/
