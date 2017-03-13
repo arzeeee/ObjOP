@@ -4,7 +4,7 @@
 class Cage {
 public : 
 	//ctor dengan dua parameter integer
-	Cage(int _x,int _y, int _animal_id);
+	Cage(int _x,int _y, int _id, int _animal_id);
 
 	//cctor
     Cage(const Cage& c);
@@ -28,7 +28,7 @@ public :
     int GetId();
 
 	//method set idx
-	void setCages(int _x,int _y, int _id, int _animal_id);
+	void setCage(int _x,int _y, int _id, int _animal_id);
 
 private:
 	int id;
