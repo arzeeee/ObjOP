@@ -1,5 +1,5 @@
 #include <iostream>
-#include "AnimAbs.h"
+#include "../include/animal.h"
 
 using namespace std;
 
@@ -155,11 +155,11 @@ Felidae::Felidae(int weight,int tipe,bool tamed,int x,int y){
 }
 
 Felidae::Felidae(const Felidae& f){
-	setWeight(this->getWeight());
-	setTipe(this->getTipe());
-	setTamed(this->getTamed());
-	setX(this->getX());
-	setY(this->getY());
+	setWeight(f.animal_weight);
+	setTipe(f.animal_tipe);
+	setTamed(f.animal_tamed);
+	setX(f.location_x);
+	setY(f.location_y);
 } 
 
 Felidae::~Felidae() {}
@@ -516,14 +516,6 @@ Paradisaeidae& Paradisaeidae::operator=(const Paradisaeidae& pm) {}
 
 /****************LAND ANIMAL*****************/
 //Implementasi Kucing
-Kucing::Kucing() {
-	setWeight(0);
-	setTipe(0);
-	setTamed(false);
-	setX(0);
-	setY(0);
-}
-
 Kucing::Kucing(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
