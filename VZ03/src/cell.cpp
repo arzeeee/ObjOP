@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../include/cell.h"
-#include "../include/render.h"
+#include "cell.h"
+#include "render.h"
 
 using namespace std;
 

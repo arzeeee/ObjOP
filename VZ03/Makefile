@@ -2,7 +2,7 @@ CC=g++
 INCLUDE_DIR=include
 SOURCE_DIR=src
 CFLAGS=-I$(INCLUDE_DIR) -Wall -g -lm -std=c++11 
-SOURCE=bin/AnimAbs.o \
+SOURCE=bin/animal.o \
 	bin/cell.o \
 	bin/render.o \
 	bin/zoo.o 

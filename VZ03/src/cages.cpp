@@ -34,6 +34,9 @@ int Cages::GetNeff() {
     return neff;
 }
 
-void Cages::SetIdx(int idx, Cage _cage) {
-    array_id[idx - 1] = _cage; 
+void Cages::SetIdx(Cage _cage) {
+    for (int i = 0;i<neff;i++) {
+        array_id[i] = _cage;     
+    }
+    
 }

@@ -5,6 +5,18 @@
 /*DEKLARASI ANIMAL*/
 /******************/
 //Class Animal dan turunannya (famili animal dan tipe animal)
+/*
+Keterangan tipe Animal
+1 = Herbivore
+2 = Karnivore
+3 = Omnivore
+*/
+
+/*
+Keterangan tamed
+true = jinak
+false = tidak jinak
+*/
 class Animal{
   public :
   	virtual void Eat() const = 0;

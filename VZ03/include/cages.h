@@ -27,7 +27,7 @@ public:
     int GetNeff();
 
 	//method set idx
-	void SetIdx(int idx, Cage _cage);
+	void SetIdx(Cage _cage);
 
 private:
 	Cage *array_id;

@@ -1,8 +1,14 @@
 #include <iostream>
-#include "../include/zoo.h"
+#include "zoo.h"
 #include <iomanip>
 
 using namespace std;
+
+Zoo::Zoo() : nbaris(1), nkolom(1) {
+	matriks_sel = new Cell *[1];
+	matriks_sel[1] = new Cell [1];
+	Cell matriks[1][1];
+}
 
 Zoo::Zoo(int nbrs, int nkol) :nbaris(nbrs), nkolom(nkol){
 	matriks_sel = new Cell *[nbaris];

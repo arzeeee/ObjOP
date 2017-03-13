@@ -537,7 +537,6 @@ Kucing::~Kucing() {}
 Kucing& Kucing::operator=(const Kucing& km) {}
 
 
-
 //Implementasi Harimau
 Harimau::Harimau(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);

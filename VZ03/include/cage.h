@@ -3,6 +3,8 @@
 
 class Cage {
 public : 
+	//ctor tanpa parameter
+	Cage();
 	//ctor dengan dua parameter integer
 	Cage(int _x,int _y, int _id, int _animal_id);
 
