@@ -17,7 +17,7 @@ class Zoo {
 		Zoo& operator=(const Zoo& z);	
 
 		//Print Zoo
-		void printZoo();
+		void printZoo(int nbrs, int nkol);
 
 		//Getter
 		int GetElementZoo(int i, int j);
