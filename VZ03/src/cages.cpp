@@ -1,5 +1,5 @@
 #include <iostream>
-#include "cagesnew.h"
+#include "cages.h"
 
 using namespace std;
 
@@ -26,8 +26,8 @@ Cages& Cages::operator=(const Cages& cs) {
     }
 }
 
-int Cages::GetArrayCage() {
-    return array_id;
+Cage Cages::GetArrayCage() {
+    return *array_id;
 }
 
 int Cages::GetNeff() {
