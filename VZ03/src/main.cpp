@@ -1,6 +1,6 @@
 #include <iostream>
-#include "zoo.h"
-#include "animal.h"
+#include "../include/zoo.h"
+#include "../include/animal.h"
 
 using namespace std;
 int main(){

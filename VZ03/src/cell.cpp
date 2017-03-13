@@ -1,6 +1,6 @@
 #include <iostream>
-#include "cell.h"
-#include "render.h"
+#include "../include/cell.h"
+#include "../include/render.h"
 
 using namespace std;
 
@@ -58,7 +58,7 @@ LandHabitat& LandHabitat::operator= (const LandHabitat& lm) {
 }
 
 void LandHabitat::Render() {
-	cout << "+";
+	cout << "#";
 }
 
 //Implementasi Air Habitat
@@ -130,7 +130,7 @@ int Road::setRoad(int y) {
 }
 
 void Road::Render() {
-	cout << "#";
+	cout << "-";
 }
 
 //Implementasi Entrance
@@ -188,7 +188,7 @@ Park& Park::operator= (const Park& pm) {
 }
 
 void Park::Render() {
-	cout << "~";
+	cout << "%";
 }
 
 //Implementasi Restaurant
