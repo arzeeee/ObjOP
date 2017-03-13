@@ -10,3 +10,7 @@ git push origin master
 co = checkout
 ci = commit
 br = branch
+=======
+export http_proxy="http://username:pass@cache.itb.ac.id:8080/"
+
+export https_proxy="http://username:pass@cache.itb.ac.id:8080/"
