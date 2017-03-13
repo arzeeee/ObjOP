@@ -22,6 +22,8 @@
 #define KMAG  "\x1B[35m"
 #define KCYN  "\x1B[36m"
 #define KWHT  "\x1B[37m"
+#define KBLK  "\x1b[30m"
+
 
 #define teks matriks_map[i][j][0]
 
@@ -32,6 +34,7 @@
 #define FMAG(x) KMAG << x << RST
 #define FCYN(x) KCYN << x << RST
 #define FWHT(x) KWHT << x << RST
+#define FBLK(x) KBLK << x << RST
 
 #define BOLD(x) "\x1B[1m" x RST
 #define UNDL(x) "\x1B[4m" x RST
@@ -99,11 +102,46 @@ Driver::~Driver() {
 }
 
 void Driver::PrintMap() {
-    //tiap cage beda warna
+    //Setiap cage memiliki warna yang berbeda
+    //Fungsinya belum diimplementasikan
+
+    //Cara menggunakan warna: Pilih salah satu warna yang sudah terdefinisi
+    //lalu dalam parameternya masukan sebuah karakter
+
+    /*
+    Keterangan warna
+    Cage 0 : putih;
+    Cage 1 : Merah;
+    Cage 2 : Biru;
+    Cage 3 : Hijau;
+    Cage 4 : Yellow;
+    Cage 5 : Magenta;
+    Cage 6 : Cyan;
+    Rest : Black;
+    
+    Mentok 8 warna;
+    */
     for (int i = 0;i<20;i++) {
         for (int j = 0;j<20;j++) {
             char x = matriks_map[i][j][0];
-            cout << FBLU(x) << " ";
+            int cid = ((matriks_map[i][j][1] - '0') * 10) + (matriks_map[i][j][2] - '0');
+            if (cid==0){
+                cout << FWHT(x) << " ";
+            } else if (cid==1){
+                cout << FRED(x) << " ";
+            } else if (cid==2){
+                cout << FBLU(x) << " ";
+            } else if (cid==3){
+                cout << FGRN(x) << " ";
+            } else if (cid==4){
+                cout << FYEL(x) << " ";
+            } else if (cid==5){
+                cout << FCYN(x) << " ";
+            } else if (cid==6){
+                cout << FMAG(x) << " ";
+            } else {
+                cout << FBLK(x) << " ";
+            }
         }
         cout << endl;
     }
