@@ -419,6 +419,7 @@ class Kucing : public Felidae {
 
 class Harimau : public Felidae {
 	public :
+		Harimau();
 		//ctor dengan parameter
 		Harimau(int weight, int tipe, bool tamed,int x,int y);
 
