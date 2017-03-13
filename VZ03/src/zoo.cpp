@@ -1,5 +1,5 @@
 #include <iostream>
-#include "zoo.h"
+#include "../include/zoo.h"
 #include <iomanip>
 
 using namespace std;
@@ -69,11 +69,54 @@ Zoo& Zoo::operator= (const Zoo& z) {
 	return *this;
 }
 
-void Zoo::printZoo(int nbrs, int nkol) {}
+void Zoo::printZoo(int nbrs, int nkol) {
+	LandHabitat a;
+	WaterHabitat b;
+	AirHabitat c;
+	Road d;
+	Park e;
+	Restaurant f;
+	Entrance g;
+	Exit h;
+	int i,j;
+	for (i = 0; i < nbrs; i++) {
+		for (j = 0; j < nkol; j++) {
+			if (GetElementZoo(i,j) == 1) {
+				a.Render();
+			} else if (GetElementZoo(i,j) == 2) {
+				b.Render();
+			} else if (GetElementZoo(i,j) == 3) {
+				c.Render();
+			} else if (GetElementZoo(i,j) == -1) {
+				d.Render();
+			} else if (GetElementZoo(i,j) == -2) {
+				e.Render();
+			} else if (GetElementZoo(i,j) == -3) {
+				f.Render();
+			} else if (GetElementZoo(i,j) == -4) {
+				f.Render();
+			} else if (GetElementZoo(i,j) == -5) {
+				f.Render();
+			}
+		}
+		cout << endl;
+	}
+
+	cout << endl;
+	cout << "Legenda : " << endl;
+	cout << "+ = Land Habitat" << setw( 15 ) << "# = Road" << endl;
+	cout << "@ = Air Habitat" << setw( 16 ) << "~ = Park" << endl;
+	cout << "$ = Water Habitat" << setw( 20 ) << "& = Restaurant" << endl;
+}
+
 
 int Zoo::GetElementZoo (int i, int j) {
 	return matriks_sel[i][j].getNilaiCell();
 }
+/*
+void Zoo::SetElementZoo (int i, int j, Cell new_el) {
+	matriks_sel[i][j] = new_el;
+}*/
 
 void Zoo::SetElementZoo(int i,int j,int k) {
 	LandHabitat a;

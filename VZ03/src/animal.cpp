@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/animal.h"
+#include "animal.h"
 
 using namespace std;
 
