@@ -8,8 +8,8 @@ Cages::Cages() {
 	height = 1;
 	width = 1;
 	id = new int*[this->width];
-	id[1] = new int[this->height];
-	id[1][1] = 0;
+	id[0] = new int[this->height];
+	id[0][0] = 0;
 }
 
 //ctor dengan dua parameter integer

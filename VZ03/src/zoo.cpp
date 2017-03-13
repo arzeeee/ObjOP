@@ -69,7 +69,7 @@ Zoo& Zoo::operator= (const Zoo& z) {
 	return *this;
 }
 
-void Zoo::printZoo() {
+void Zoo::printZoo(int nbrs, int nkol) {
 	LandHabitat a;
 	WaterHabitat b;
 	AirHabitat c;
@@ -79,8 +79,8 @@ void Zoo::printZoo() {
 	Entrance g;
 	Exit h;
 	int i,j;
-	for (i = 0; i < nbaris; i++) {
-		for (j = 0; j < nkolom; j++) {
+	for (i = 0; i < nbrs; i++) {
+		for (j = 0; j < nkol; j++) {
 			if (GetElementZoo(i,j) == 1) {
 				a.Render();
 			} else if (GetElementZoo(i,j) == 2) {

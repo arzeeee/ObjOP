@@ -398,9 +398,8 @@ class Paradisaeidae : public AirAnimal {
 /*******************/
 
 /****************LAND ANIMAL*****************/
-class Kucing : public Felidae {
+class Kucing : public Felidae { //pada map ditulis K
 	public :
-		Kucing();
 		//ctor dengan parameter
 		Kucing(int weight, int tipe, bool tamed,int x,int y);
 
@@ -417,9 +416,8 @@ class Kucing : public Felidae {
 		virtual void Eat(){};
 };
 
-class Harimau : public Felidae {
+class Harimau : public Felidae {//pada map ditulis H
 	public :
-		Harimau();
 		//ctor dengan parameter
 		Harimau(int weight, int tipe, bool tamed,int x,int y);
 
@@ -436,8 +434,9 @@ class Harimau : public Felidae {
 		virtual void Eat(){};
 };
 
-class Singa : public Felidae {
+class Singa : public Felidae {//pada map ditulis S
 	public :
+		Singa();
 		//ctor dengan parameter
 		Singa(int weight, int tipe, bool tamed,int x,int y);
 
@@ -454,7 +453,7 @@ class Singa : public Felidae {
 		virtual void Eat(){};
 };
 
-class Jerapah : public Giraffidae {
+class Jerapah : public Giraffidae {//pada map ditulis J
 	public :
 		//ctor dengan parameter
 		Jerapah(int weight, int tipe, bool tamed,int x,int y);
@@ -472,7 +471,7 @@ class Jerapah : public Giraffidae {
 		virtual void Eat(){};
 };
 
-class Okapi : public Giraffidae {
+class Okapi : public Giraffidae {//pada map ditulis O
 	public :
 		//ctor dengan parameter
 		Okapi(int weight, int tipe, bool tamed,int x,int y);
@@ -490,7 +489,7 @@ class Okapi : public Giraffidae {
 		virtual void Eat(){};
 };
 
-class Panda : public Ursidae {
+class Panda : public Ursidae {//pada map ditulis D
 	public :
 		//ctor dengan parameter
 		Panda(int weight, int tipe, bool tamed,int x,int y);
@@ -508,7 +507,7 @@ class Panda : public Ursidae {
 		virtual void Eat(){};
 };
 
-class Beruang : public Ursidae {
+class Beruang : public Ursidae {//pada map ditulis B
 	public :
 		//ctor dengan parameter
 		Beruang(int weight, int tipe, bool tamed,int x,int y);
@@ -526,7 +525,7 @@ class Beruang : public Ursidae {
 		virtual void Eat(){};
 };
 
-class Zebra : public Equidae {
+class Zebra : public Equidae {//pada map ditulis Z
 	public :
 		//ctor dengan parameter
 		Zebra(int weight, int tipe, bool tamed,int x,int y);
@@ -544,7 +543,7 @@ class Zebra : public Equidae {
 		virtual void Eat(){};
 };
 
-class Kuda : public Equidae {
+class Kuda : public Equidae {//pada map ditulis U
 	public :
 		//ctor dengan parameter
 		Kuda(int weight, int tipe, bool tamed,int x,int y);
@@ -563,7 +562,7 @@ class Kuda : public Equidae {
 };
 
 /****************WATER ANIMAL*****************/
-class Ebosia : public Scorpaenidae {
+class Ebosia : public Scorpaenidae {//pada map ditulis E
 	public :
 		//ctor dengan parameter
 		Ebosia(int weight, int tipe, bool tamed,int x,int y);
@@ -582,7 +581,7 @@ class Ebosia : public Scorpaenidae {
 
 };
 
-class Lionfish : public Scorpaenidae {
+class Lionfish : public Scorpaenidae {//pada map ditulis I
 	public :
 		//ctor dengan parameter
 		Lionfish(int weight, int tipe, bool tamed,int x,int y);
@@ -600,7 +599,7 @@ class Lionfish : public Scorpaenidae {
 		virtual void Eat(){};
 };
 
-class LumbaLumba : public Delphidae {
+class LumbaLumba : public Delphidae {//pada map ditulis L
 	public :
 		//ctor dengan parameter
 		LumbaLumba(int weight, int tipe, bool tamed,int x,int y);
@@ -618,7 +617,7 @@ class LumbaLumba : public Delphidae {
 		virtual void Eat(){};
 };
 
-class HiuPutih : public Selachii {
+class HiuPutih : public Selachii {//pada map ditulis T
 	public :
 		//ctor dengan parameter
 		HiuPutih(int weight, int tipe, bool tamed,int x,int y);
@@ -636,7 +635,7 @@ class HiuPutih : public Selachii {
 		virtual void Eat(){};
 };
 
-class BigBlueOct : public Octopodiae {
+class BigBlueOct : public Octopodiae {//pada map ditulis G
 	public :
 		//ctor dengan parameter
 		BigBlueOct(int weight, int tipe, bool tamed,int x,int y);
@@ -654,7 +653,7 @@ class BigBlueOct : public Octopodiae {
 		virtual void Eat(){};
 };
 
-class EastPacRedOct : public Octopodiae {
+class EastPacRedOct : public Octopodiae {//pada map ditulis R
 	public :
 		//ctor dengan parameter
 		EastPacRedOct(int weight, int tipe, bool tamed,int x,int y);
@@ -673,7 +672,7 @@ class EastPacRedOct : public Octopodiae {
 };
 
 /****************AIR ANIMAL*****************/
-class Merpati : public Columbidae {
+class Merpati : public Columbidae {//pada map ditulis M
 	public :
 		//ctor dengan parameter
 		Merpati(int weight, int tipe, bool tamed,int x,int y);
@@ -691,7 +690,7 @@ class Merpati : public Columbidae {
 		virtual void Eat(){};
 };
 
-class Rajawali : public Accipitridae {
+class Rajawali : public Accipitridae {//pada map ditulis W
 	public :
 		//ctor dengan parameter
 		Rajawali(int weight, int tipe, bool tamed,int x,int y);
@@ -709,7 +708,7 @@ class Rajawali : public Accipitridae {
 		virtual void Eat(){};
 };
 
-class Elang : public Accipitridae {
+class Elang : public Accipitridae {//pada map ditulis N
 	public :
 		//ctor dengan parameter
 		Elang(int weight, int tipe, bool tamed,int x,int y);
@@ -727,7 +726,7 @@ class Elang : public Accipitridae {
 		virtual void Eat(){};
 };
 
-class Kelelawar : public Molossidae {
+class Kelelawar : public Molossidae {//pada map ditulis A
 	public :
 		//ctor dengan parameter
 		Kelelawar(int weight, int tipe, bool tamed,int x,int y);
@@ -746,7 +745,7 @@ class Kelelawar : public Molossidae {
 
 };
 
-class Cendrawasih : public Paradisaeidae {
+class Cendrawasih : public Paradisaeidae {//pada map ditulis C
 	public :
 		//ctor dengan parameter
 		Cendrawasih(int weight, int tipe, bool tamed,int x,int y);
