@@ -24,7 +24,7 @@ Cage& Cage::operator=(const Cage& c) {
         id = c.id;
         x = c.x;
         y = c.y;
-        animal_id = c.animal_id 
+        animal_id = c.animal_id;
     }
     return *this;
 }
