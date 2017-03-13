@@ -46,8 +46,9 @@ class Kucing{
 		bool animal_tamed;
 };
 
-class Harimau : public Felidae {
+class Harimau {
 	public :
+		Harimau();
 		//ctor dengan parameter
 		Harimau(int weight, int tipe, bool tamed,int x,int y);
 
@@ -61,11 +62,34 @@ class Harimau : public Felidae {
 		Harimau& operator=(const Harimau& hm);
 
 		//deklarasi polimorfik
-		void Eat(){};
+		void interact();
+
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Singa : public Felidae {
+class Singa{
 	public :
+		Singa();
 		//ctor dengan parameter
 		Singa(int weight, int tipe, bool tamed,int x,int y);
 
@@ -79,11 +103,34 @@ class Singa : public Felidae {
 		Singa& operator=(const Singa& sm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Jerapah : public Giraffidae {
+class Jerapah{
 	public :
+		Jerapah();
 		//ctor dengan parameter
 		Jerapah(int weight, int tipe, bool tamed,int x,int y);
 
@@ -97,11 +144,34 @@ class Jerapah : public Giraffidae {
 		Jerapah& operator=(const Jerapah& jm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+		
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Okapi : public Giraffidae {
+class Okapi {
 	public :
+		Okapi();
 		//ctor dengan parameter
 		Okapi(int weight, int tipe, bool tamed,int x,int y);
 
@@ -115,11 +185,34 @@ class Okapi : public Giraffidae {
 		Okapi& operator=(const Okapi& om);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+		
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Panda : public Ursidae {
+class Panda{
 	public :
+		Panda();
 		//ctor dengan parameter
 		Panda(int weight, int tipe, bool tamed,int x,int y);
 
@@ -133,11 +226,33 @@ class Panda : public Ursidae {
 		Panda& operator=(const Panda& pm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Beruang : public Ursidae {
+class Beruang{
 	public :
+		Beruang();
 		//ctor dengan parameter
 		Beruang(int weight, int tipe, bool tamed,int x,int y);
 
@@ -151,11 +266,34 @@ class Beruang : public Ursidae {
 		Beruang& operator=(const Beruang& bm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+		
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Zebra : public Equidae {
+class Zebra{
 	public :
+		Zebra();
 		//ctor dengan parameter
 		Zebra(int weight, int tipe, bool tamed,int x,int y);
 
@@ -169,11 +307,33 @@ class Zebra : public Equidae {
 		Zebra& operator=(const Zebra& zm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Kuda : public Equidae {
+class Kuda{
 	public :
+		Kuda();
 		//ctor dengan parameter
 		Kuda(int weight, int tipe, bool tamed,int x,int y);
 
@@ -187,12 +347,34 @@ class Kuda : public Equidae {
 		Kuda& operator=(const Kuda& km);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
 /****************WATER ANIMAL*****************/
-class Ebosia : public Scorpaenidae {
+class Ebosia {
 	public :
+		Ebosia();
 		//ctor dengan parameter
 		Ebosia(int weight, int tipe, bool tamed,int x,int y);
 
@@ -206,12 +388,34 @@ class Ebosia : public Scorpaenidae {
 		Ebosia& operator=(const Ebosia& e);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 
 };
 
-class Lionfish : public Scorpaenidae {
+class Lionfish {
 	public :
+		Lionfish();
 		//ctor dengan parameter
 		Lionfish(int weight, int tipe, bool tamed,int x,int y);
 
@@ -225,11 +429,33 @@ class Lionfish : public Scorpaenidae {
 		Lionfish& operator=(const Lionfish& lm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class LumbaLumba : public Delphidae {
+class LumbaLumba{
 	public :
+		LumbaLumba();
 		//ctor dengan parameter
 		LumbaLumba(int weight, int tipe, bool tamed,int x,int y);
 
@@ -243,11 +469,33 @@ class LumbaLumba : public Delphidae {
 		LumbaLumba& operator=(const LumbaLumba& lm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class HiuPutih : public Selachii {
+class HiuPutih{
 	public :
+		HiuPutih();
 		//ctor dengan parameter
 		HiuPutih(int weight, int tipe, bool tamed,int x,int y);
 
@@ -261,11 +509,33 @@ class HiuPutih : public Selachii {
 		HiuPutih& operator=(const HiuPutih& hm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class BigBlueOct : public Octopodiae {
+class BigBlueOct {
 	public :
+		BigBlueOct();
 		//ctor dengan parameter
 		BigBlueOct(int weight, int tipe, bool tamed,int x,int y);
 
@@ -279,11 +549,33 @@ class BigBlueOct : public Octopodiae {
 		BigBlueOct& operator=(const BigBlueOct& bm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class EastPacRedOct : public Octopodiae {
+class EastPacRedOct{
 	public :
+		EastPacRedOct();
 		//ctor dengan parameter
 		EastPacRedOct(int weight, int tipe, bool tamed,int x,int y);
 
@@ -297,12 +589,34 @@ class EastPacRedOct : public Octopodiae {
 		EastPacRedOct& operator=(const EastPacRedOct& em);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
 /****************AIR ANIMAL*****************/
-class Merpati : public Columbidae {
+class Merpati{
 	public :
+		Merpati();
 		//ctor dengan parameter
 		Merpati(int weight, int tipe, bool tamed,int x,int y);
 
@@ -316,11 +630,33 @@ class Merpati : public Columbidae {
 		Merpati& operator=(const Merpati& mm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Rajawali : public Accipitridae {
+class Rajawali {
 	public :
+		Rajawali();
 		//ctor dengan parameter
 		Rajawali(int weight, int tipe, bool tamed,int x,int y);
 
@@ -334,11 +670,33 @@ class Rajawali : public Accipitridae {
 		Rajawali& operator=(const Rajawali& rm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Elang : public Accipitridae {
+class Elang{
 	public :
+		Elang();
 		//ctor dengan parameter
 		Elang(int weight, int tipe, bool tamed,int x,int y);
 
@@ -352,11 +710,33 @@ class Elang : public Accipitridae {
 		Elang& operator=(const Elang& em);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Kelelawar : public Molossidae {
+class Kelelawar{
 	public :
+		Kelelawar();
 		//ctor dengan parameter
 		Kelelawar(int weight, int tipe, bool tamed,int x,int y);
 
@@ -370,12 +750,33 @@ class Kelelawar : public Molossidae {
 		Kelelawar& operator=(const Kelelawar& km);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
 
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
-class Cendrawasih : public Paradisaeidae {
+class Cendrawasih{
 	public :
+		Cendrawasih();
 		//ctor dengan parameter
 		Cendrawasih(int weight, int tipe, bool tamed,int x,int y);
 
@@ -389,7 +790,68 @@ class Cendrawasih : public Paradisaeidae {
 		Cendrawasih& operator=(const Cendrawasih& cm);
 
 		//deklarasi polimorfik
-		virtual void Eat(){};
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
 };
 
+class Penyu{
+	public :
+		Penyu();
+		//ctor dengan parameter
+		Penyu(int weight, int tipe, bool tamed, int x, int y);
+		
+		//cctor
+		Penyu(const Penyu& p);
+		
+		//dtor
+		~Penyu();
+		
+		//operator=
+		Penyu& operator=(const Penyu& py);
+		
+		//deklarasi polimorfik
+		void interact();
+
+		//deklarasi geter
+		int getWeight(); 	
+		int getTipe(); 		
+		bool getTamed();		
+		int getX();			
+		int getY();
+
+		//deklarasi setter
+		void setWeight(int );
+		void setTipe(int );
+		void setTamed(bool );
+		void setX(int );
+		void setY(int );
+
+	private :
+		int location_x;
+		int location_y;
+		int animal_weight;
+		int animal_tipe;		
+		bool animal_tamed;
+		
+};
 #endif
