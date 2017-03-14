@@ -80,6 +80,8 @@ Driver::Driver() : zoo_width(20), zoo_height(20) {
     int i,j;
     int aid;
     int cid;
+    int mcid = 0;
+    Cages* kandang_kandang;
 
     ifstream infile;
     infile.open ("mapZoo.txt");
@@ -136,6 +138,9 @@ Driver::Driver() : zoo_width(20), zoo_height(20) {
     for (i = 0;i<zoo_height;i++) {
         for (j = 0; j < zoo_width; j++){
             cid = ((matriks_map[i][j][1] - '0') * 10) + (matriks_map[i][j][2] - '0');    
+            if (mcid<cid) {
+                mcid = cid;
+            }
             if (matriks_map[i][j][0] == 'K') {
                 aid = 1;
             } else if (matriks_map[i][j][0] == 'H') {
@@ -182,7 +187,37 @@ Driver::Driver() : zoo_width(20), zoo_height(20) {
             kandang[i][j].setCage(i,j,cid,aid);
         }    
     }
-     //menutup file eksternal
+    //Alokasi array of cages, ukuran indeks 1 ~ mcid
+    kandang_kandang = new Cages[mcid+1];
+
+    for (int a = 1;a<=mcid;a++) {
+        int amount = 0;
+        for (i = 0;i<zoo_height;i++) {
+            for (j = 0; j < zoo_width; j++){
+                if (kandang[i][j].GetId() == a) {
+                    amount++;
+                }
+            }
+        }
+        Cages dummy(amount);
+        i = 0;
+        j = 0;
+        int found = 0;
+        while ((i<zoo_height) && (found == 0)) {
+            while ((j<zoo_width) && (found == 0)) {
+                if (kandang[i][j].GetId() == a) {
+                    dummy.SetIdx(kandang[i][j]);
+                    found = 1;
+                } else {
+                    j++;
+                }
+            }
+            i++;
+        }
+        kandang_kandang[a] = dummy;
+    }
+
+    //menutup file eksternal
      infile.close();
 }
 
