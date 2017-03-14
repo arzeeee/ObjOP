@@ -404,6 +404,26 @@ class Paradisaeidae : public AirAnimal {
 		virtual void Eat(){};
 };
 
+class Cheloniidae : public WaterAnimal{
+	public :
+		//ctor tanpa parameter
+		Cheloniidae();
+
+		//ctor dengan parameter
+		Cheloniidae(int weight,int tipe,bool tamed,int x,int y);
+
+		//cctor
+		Cheloniidae(const Cheloniidae& c);
+
+		//dtor
+		~Cheloniidae();
+
+		//operator=
+		Cheloniidae& operator=(const Cheloniidae& cm);
+
+		//deklarasi polimorfik
+		virtual void Eat(){};
+};
 
 /*******************/
 /*DEKLARASI SPESIES*/
@@ -773,6 +793,24 @@ class Cendrawasih : public Paradisaeidae {//pada map ditulis C
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+};
+
+class Penyu : public Cheloniidae {
+	public :
+		//ctor dengan parameter
+		Penyu(int weight, int tipe, bool tamed,int x,int y);
+
+		//cctor
+		Penyu(const Penyu& p);
+
+		//dtor
+		~Penyu();
+
+		//operator=
+		Penyu& operator=(const Penyu& pm);
+
+		//deklarasi polimorfik
+		virtual void Eat(){};		
 };
 
 #endif
