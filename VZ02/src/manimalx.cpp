@@ -5,10 +5,11 @@ using namespace std;
 
 int main(){
 
-	Animal diar;
-	diar.LAnimal.felidae.kucing.setWeight(5);
-	int x = diar.LAnimal.felidae.kucing.getWeight();
+	Animal kontlo;
+	kontlo.LAnimal.felidae.kucing.setWeight(5);
+	int x = kontlo.LAnimal.felidae.kucing.getWeight();
+	int y = kontlo.WAnimal.selachii.hiuPutih.getWeight();
 
-	cout << x << endl;
+	cout << x << " " << y << endl;
 	return 0;
 }

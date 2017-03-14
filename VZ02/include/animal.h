@@ -953,18 +953,19 @@ class LandAnimal{
 
 class AirAnimal{
   public:
-	Scorpaenidae scorpaenidae;
-	Delphidae delphidae;
-	Selachii selachii;
-	Octopodiae octopodiae;	
-};
-
-class WaterAnimal{
-  public:
   	Columbidae columbidae;		
   	Accipitridae accipitridae;
   	Molossidae molossidae;
   	Paradisaeidae paradisaeidae;
+};
+
+class WaterAnimal{
+  public:
+	Scorpaenidae scorpaenidae;
+	Delphidae delphidae;
+	Selachii selachii;
+	Octopodiae octopodiae;	
+  	
 };
 
 class Animal{
