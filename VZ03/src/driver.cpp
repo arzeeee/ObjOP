@@ -10,9 +10,11 @@
 #include "cages.h"
 #include "animal.h"
 #include "render.h"
+#include "player.h"
 
 /* FOREGROUND */
 #define RST  "\033[0m"
+#define KROAD "\033[48;5;3m\033[38;5;0m"
 #define KI0 "\033[38;5;0m"
 #define KI1 "\033[38;5;1m"
 #define KI2 "\033[38;5;2m"
@@ -44,6 +46,7 @@
 #define teks matriks_map[i][j][0]
 
 #define FI0(x) KI0 << x << RST
+#define FROAD(x) KROAD << x << RST
 #define FI1(x) KI1 << x << RST
 #define FI2(x) KI2 << x << RST
 #define FI3(x) KI3 << x << RST
@@ -81,8 +84,7 @@ Driver::Driver() : zoo_width(20), zoo_height(20) {
     int aid;
     int cid;
     int mcid = 0;
-    Cages* kandang_kandang;
-
+    
     ifstream infile;
     infile.open ("mapZoo.txt");
     string str;
@@ -128,7 +130,6 @@ Driver::Driver() : zoo_width(20), zoo_height(20) {
      }
 
     //alokasi cage
-    Cage** kandang;
     kandang = new Cage*[zoo_height];
     for (i = 0;i<zoo_height;i++) {
         kandang[i] = new Cage[zoo_width];
@@ -224,11 +225,14 @@ Driver::Driver() : zoo_width(20), zoo_height(20) {
 Driver::~Driver() {
     for (int i = 0;i<zoo_height;i++) {
         delete [] matriks_map[i];
+        delete [] kandang[i];
     }
     delete [] matriks_map;
+    delete [] kandang;
+    delete [] kandang_kandang;
 }
 
-void Driver::PrintMap() {
+void Driver::PrintMap(int user_x, int user_y) {
     //Setiap cage memiliki warna yang berbeda
     //Fungsinya belum diimplementasikan
 
@@ -238,10 +242,17 @@ void Driver::PrintMap() {
    
     for (int i = 0;i<20;i++) {
         for (int j = 0;j<20;j++) {
-            char x = matriks_map[i][j][0];
+            char x;
+            if ((i != user_x) && (j != user_y)) { 
+                x = matriks_map[i][j][0];
+            } else {
+                x = '!';
+            }
             int cid = ((matriks_map[i][j][1] - '0') * 10) + (matriks_map[i][j][2] - '0');
-            if (cid==0){
-                cout << FI0(x) << " ";
+            if ((cid==0) && ((x == '-') || (x == '!'))){
+                cout << FROAD(x) << FROAD(' ');
+            } else if (cid==0){
+                cout << FI0(x) << " ";    
             } else if (cid==1){
                 cout << FI1(x) << " ";
             } else if (cid==2){
@@ -294,6 +305,7 @@ void Driver::PrintMap() {
         }
         cout << endl;
     }
+    cout << endl;
 }
 
 void Driver::PrintMap(int x1, int y1, int x2,int y2) {
@@ -302,14 +314,18 @@ void Driver::PrintMap(int x1, int y1, int x2,int y2) {
 
     //Cara menggunakan warna: Pilih salah satu warna yang sudah terdefinisi
     //lalu dalam parameternya masukan sebuah karakter
-    if ((((x1<0||x1>zoo_height)||(x2<0||x2>zoo_height))||((y1<0||y1>zoo_width)||(x2<0||x2>zoo_width)))||((x1>x2)||(y1>y2))) {
+    if ((((x1<0||x1>zoo_height)||(x2<0||x2>zoo_height))
+        ||((y1<0||y1>zoo_width)||(x2<0||x2>zoo_width)))
+        ||((x1>x2)||(y1>y2))) {
         cout << "parameter invalid" << endl;
     } else {
         for (int i = x1;i<x2;i++) {
             for (int j = y1;j<y2;j++) {
                 char x = matriks_map[i][j][0];
                 int cid = ((matriks_map[i][j][1] - '0') * 10) + (matriks_map[i][j][2] - '0');
-                if (cid==0){
+                if ((cid == 0) && (x == '-')){
+                    cout << FROAD(x) << FROAD(' ');
+                } else if (cid==0){
                     cout << FI0(x) << " ";
                 } else if (cid==1){
                     cout << FI1(x) << " ";
@@ -363,10 +379,96 @@ void Driver::PrintMap(int x1, int y1, int x2,int y2) {
             }
             cout << endl;
         }
+
     }
+    cout << endl;
 }
 
 void Driver::PrintLegend() {
-    cout << "Legenda" << endl;
-    cout << "> ";
+    cout << "\033[48;5;3m\033[38;5;0m                    ~::Legenda::~                    \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0m#: Land Habitat     $: Water Habitat                 \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0m@: Air Habitat      -: Road (Can be Exit or Entrance)\033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mP: Park             &: Restaurant                    \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mK: Kucing           H: Harimau                       \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mS: Singa            J: Jerapah                       \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mO: Okapi            D: Panda                         \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mB: Beruang          Z: Zebra                         \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mU: Kuda             E: Ebosia                        \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mI: Lionfish         L: Lumba-Lumba                   \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mT: Hiu Putih        G: Gurita Biru                   \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mR: Gurita Merah     M: Merpati                       \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mW: Rajawali         N: Elang                         \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mA: Kelelawar        C: Cendrawasih                   \033[0m" << endl;
+    cout << "\033[48;5;3m\033[38;5;0mY: Penyu                                             \033[0m" << endl;
+}
+
+void Driver::PrintInterface() {
+    cout << "Selamat Datang di Kebun Binatang" << endl;
+    cout << "Berikut adalah kegiatan yang dapat kamu lakukan di Kebun Binatang" << endl;
+    cout << "1. Menampilkan Peta Kebun Binatang" << endl;
+    cout << "2. Melakukan Tour Kebun Binatang" << endl;
+    cout << "3. Keluar dari Kebun Binatang" << endl;
+    cout << "Masukan nomor pilihan kegiatan yang ingin kamu lakukan : ";
+}
+
+void Driver::InputPilihan() {
+    int pilihan;
+    cin >> pilihan;
+    while ((pilihan != 3) && (pilihan >= 1) && (pilihan <= 3)) {
+        if (pilihan == 1) {
+            int x1,y1,x2,y2;
+            cout << "Masukkan koordinat titik kiri atas : ";
+            cin >> x1 >> y1;
+            cout << "Masukkan koordinat titik kanan bawah : ";
+            cin >> x2 >> y2;
+            PrintMap(x1,y1,x2,y2);
+            PrintLegend();
+        } else if (pilihan == 2) {
+            int i = 0;
+            int j = 0;
+            int found = 0;
+
+            while ((i<zoo_height) && (found == 0)) {
+                while ((j<zoo_width) && (found == 0)) {
+                    if (mapzoo.GetElementZoo(i,j) == -4) {
+                        found = 1;
+                    } else {
+                        j++;
+                    }
+                }
+                i++;
+            }
+            user.setX(i);
+            user.setY(j);
+            PrintMap(i,j);
+            PrintLegend();
+        }
+        PrintInterface();
+        cin >> pilihan;
+    } 
+    
+}
+
+void Driver::PrintInterfaceTour() {
+    cout << "Hal yang dapat Anda lakukan saat Tour adalah " << endl;
+    cout << "1. Berinteraksi dengan binatang" << endl;
+    cout << "2. Mengetahui banyaknya makanan yang dikonsumsi binatang per hari" << endl;
+    cout << "3. Melanjutkan Tour" << endl;
+    cout << "4. Mengakhiri Tour" << endl;
+}
+
+void Driver::InputPilihanTour() {
+    int pilihan_tour;
+    cin >> pilihan_tour;
+    while ((pilihan_tour != 4) && (pilihan_tour >= 1) && (pilihan_tour <= 4)) {
+        if (pilihan_tour == 1) {
+
+        } else if (pilihan_tour == 2) {
+
+        } else if (pilihan_tour == 3) {
+
+        }
+        PrintInterfaceTour();
+        cin >> pilihan_tour;
+    }
 }
