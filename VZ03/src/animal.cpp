@@ -508,6 +508,35 @@ Paradisaeidae::~Paradisaeidae() {}
 
 Paradisaeidae& Paradisaeidae::operator=(const Paradisaeidae& pm) {}
 
+//Implementasi Cheloniidae
+Cheloniidae::Cheloniidae(){
+	setWeight(0);
+	setTipe(0);
+	setTamed(false);
+	setX(0);
+	setY(0);
+}
+
+Cheloniidae::Cheloniidae(int weight,int tipe,bool tamed,int x,int y){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+	setX(x);
+	setY(y);
+}
+
+Cheloniidae::Cheloniidae(const Cheloniidae& c){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+	setX(this->getX());
+	setY(this->getY());
+} 
+
+Cheloniidae::~Cheloniidae() {}
+
+Cheloniidae& Cheloniidae::operator=(const Cheloniidae& cm) {}
+
 
 
 /*******************/
@@ -976,5 +1005,25 @@ Cendrawasih::~Cendrawasih(){}
 
 Cendrawasih& Cendrawasih::operator=(const Cendrawasih& cm) {}
 
+//Implementasi Penyu
+Penyu::Penyu(int weight, int tipe, bool tamed,int x,int y){
+	setWeight(weight);
+	setTipe(tipe);
+	setTamed(tamed);
+	setX(x);
+	setY(y);
+}
+
+Penyu::Penyu(const Penyu& p){
+	setWeight(this->getWeight());
+	setTipe(this->getTipe());
+	setTamed(this->getTamed());
+	setX(this->getX());
+	setY(this->getY());
+} 
+
+Penyu::~Penyu(){}
+
+Penyu& Penyu::operator=(const Penyu& pm) {}
 
 
