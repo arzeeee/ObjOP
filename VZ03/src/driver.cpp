@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../include/driver.h"
+#include "driver.h"
 #include <fstream>
 #include <cstdlib>
 #include "zoo.h"
@@ -293,6 +293,76 @@ void Driver::PrintMap() {
             } 
         }
         cout << endl;
+    }
+}
+
+void Driver::PrintMap(int x1, int y1, int x2,int y2) {
+    //Setiap cage memiliki warna yang berbeda
+    //Fungsinya belum diimplementasikan
+
+    //Cara menggunakan warna: Pilih salah satu warna yang sudah terdefinisi
+    //lalu dalam parameternya masukan sebuah karakter
+    if ((((x1<0||x1>zoo_height)||(x2<0||x2>zoo_height))||((y1<0||y1>zoo_width)||(x2<0||x2>zoo_width)))||((x1>x2)||(y1>y2))) {
+        cout << "parameter invalid" << endl;
+    } else {
+        for (int i = x1;i<x2;i++) {
+            for (int j = y1;j<y2;j++) {
+                char x = matriks_map[i][j][0];
+                int cid = ((matriks_map[i][j][1] - '0') * 10) + (matriks_map[i][j][2] - '0');
+                if (cid==0){
+                    cout << FI0(x) << " ";
+                } else if (cid==1){
+                    cout << FI1(x) << " ";
+                } else if (cid==2){
+                    cout << FI2(x) << " ";
+                } else if (cid==3){
+                    cout << FI3(x) << " ";
+                } else if (cid==4){
+                    cout << FI4(x) << " ";
+                } else if (cid==5){
+                    cout << FI5(x) << " ";
+                } else if (cid==6){
+                    cout << FI6(x) << " ";
+                } else if (cid==7){
+                    cout << FI7(x) << " ";
+                } else if (cid==8){
+                    cout << FI8(x) << " ";
+                } else if (cid==9){
+                    cout << FI9(x) << " ";
+                } else if (cid==10){
+                    cout << FI10(x) << " ";
+                } else if (cid==11){
+                    cout << FI11(x) << " ";
+                } else if (cid==12){
+                    cout << FI12(x) << " ";
+                } else if (cid==13){
+                    cout << FI13(x) << " ";
+                } else if (cid==14){
+                    cout << FI14(x) << " ";
+                } else if (cid==15){
+                    cout << FI15(x) << " ";
+                } else if (cid==16){
+                    cout << FI16(x) << " ";
+                } else if (cid==17){
+                    cout << FI17(x) << " ";
+                } else if (cid==18){
+                    cout << FI18(x) << " ";
+                } else if (cid==19){
+                    cout << FI19(x) << " ";
+                } else if (cid==20){
+                    cout << FI20(x) << " ";
+                } else if (cid==21){
+                    cout << FI21(x) << " ";
+                } else if (cid==22){
+                    cout << FI22(x) << " ";
+                } else if (cid==23){
+                    cout << FI23(x) << " ";
+                } else if (cid==24){
+                    cout << FI24(x) << " ";
+                } 
+            }
+            cout << endl;
+        }
     }
 }
 
