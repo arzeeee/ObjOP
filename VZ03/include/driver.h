@@ -17,6 +17,9 @@ class Driver {
         //method print map
         void PrintMap();
 
+        //method print map dengan parameter
+        void PrintMap(int x1, int y1, int x2,int y2);
+
         //method print legenda
         void PrintLegend();
 
