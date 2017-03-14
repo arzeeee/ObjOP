@@ -1,11 +1,29 @@
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#ifndef ANIMALX_H
+#define ANIMALX_H
 
-/*******************/
-/*DEKLARASI SPESIES*/
-/*******************/
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
 
-/****************LAND ANIMAL*****************/
+/******************/
+/*DEKLARASI ANIMAL*/
+/******************/
+//Class Animal dan turunannya (famili animal dan tipe animal)
+/*
+Keterangan tipe Animal
+1 = Herbivore
+2 = Karnivore
+3 = Omnivore
+*/
+
+/*
+Keterangan tamed
+true = jinak
+false = tidak jinak
+*/
+
+
 class Kucing{
 	public :
 		Kucing();
@@ -854,4 +872,108 @@ class Penyu{
 		bool animal_tamed;
 		
 };
+
+
+class Felidae{
+public:
+	Kucing kucing;
+	Harimau harimau;
+	Singa singa;
+};
+
+class Giraffidae{
+public:
+	Jerapah jerapah;
+	Okapi okapi;
+};
+
+class Ursidae{
+public:
+	Panda panda;
+	Beruang beruang;
+};
+
+class Equidae{
+public:
+	Zebra zebra;
+	Kuda kuda;
+};
+
+class Scorpaenidae{
+public:
+	Ebosia ebosia;
+	Lionfish lionfish;
+};
+
+class Delphidae{
+public:
+	LumbaLumba lumbaLumba;
+};
+
+class Selachii{
+public:
+	HiuPutih hiuPutih;
+};
+
+class Octopodiae{
+public:
+	BigBlueOct bigBlueOct;
+	EastPacRedOct eastPacRedOct;
+};
+
+class Columbidae{
+public:
+	Merpati merpati;
+};
+
+class Accipitridae{
+public:
+	Rajawali rajwali;
+	Elang elang;
+};
+
+class Molossidae{
+public:
+	Kelelawar kelelawar;
+};
+
+class Paradisaeidae{
+public:
+	Cendrawasih cendrawasih;
+};
+
+
+class LandAnimal{
+  public:
+	Felidae felidae;
+	Giraffidae giraffidae;
+	Ursidae ursidae;
+	Equidae equidae;		
+};
+
+class AirAnimal{
+  public:
+	Scorpaenidae scorpaenidae;
+	Delphidae delphidae;
+	Selachii selachii;
+	Octopodiae octopodiae;	
+};
+
+class WaterAnimal{
+  public:
+  	Columbidae columbidae;		
+  	Accipitridae accipitridae;
+  	Molossidae molossidae;
+  	Paradisaeidae paradisaeidae;
+};
+
+class Animal{
+  public:
+  	LandAnimal LAnimal;
+	AirAnimal  AAnimal;
+	WaterAnimal WAnimal;
+	
+};
+
+
 #endif
