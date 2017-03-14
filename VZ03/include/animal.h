@@ -1,6 +1,11 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
 /******************/
 /*DEKLARASI ANIMAL*/
 /******************/
@@ -20,6 +25,7 @@ false = tidak jinak
 class Animal{
   public :
   	virtual void Eat() = 0;
+  	virtual void Interact() = 0;
 
   	//getter
   	virtual int getWeight(){return animal_weight;};
@@ -63,6 +69,9 @@ class LandAnimal : public Animal {
 		//deklarasi polimorfik 
 		virtual void Eat(){};
 
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
   	//Realisasi getter
 	virtual int getWeight() 	{return animal_weight;}
 	virtual int getTipe() 		{return animal_tipe;}
@@ -98,6 +107,9 @@ class AirAnimal : public Animal {
 		//deklarasi polimorfik
 		virtual void Eat(){} ;
 
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 	//Realisasi getter
 	virtual int getWeight() 	{return animal_weight;}
 	virtual int getTipe() 		{return animal_tipe;}
@@ -132,6 +144,9 @@ class WaterAnimal : public Animal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){} ;
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
 
   	//Realisasi getter
 	virtual int getWeight() 	{return animal_weight;}
@@ -171,6 +186,10 @@ class Felidae : public LandAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Giraffidae : public LandAnimal {
@@ -192,6 +211,10 @@ class Giraffidae : public LandAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Ursidae : public LandAnimal {
@@ -213,6 +236,10 @@ class Ursidae : public LandAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Equidae : public LandAnimal {
@@ -234,6 +261,10 @@ class Equidae : public LandAnimal {
 
 		//deklasari polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Scorpaenidae : public WaterAnimal {
@@ -255,6 +286,10 @@ class Scorpaenidae : public WaterAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Delphidae : public WaterAnimal {
@@ -276,6 +311,10 @@ class Delphidae : public WaterAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Selachii : public WaterAnimal {
@@ -297,6 +336,10 @@ class Selachii : public WaterAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Octopodiae : public WaterAnimal {
@@ -318,6 +361,10 @@ class Octopodiae : public WaterAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Columbidae : public AirAnimal {
@@ -339,6 +386,10 @@ class Columbidae : public AirAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Accipitridae : public AirAnimal {
@@ -360,6 +411,10 @@ class Accipitridae : public AirAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Molossidae : public AirAnimal {
@@ -381,6 +436,10 @@ class Molossidae : public AirAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Paradisaeidae : public AirAnimal {
@@ -402,6 +461,10 @@ class Paradisaeidae : public AirAnimal {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 class Cheloniidae : public WaterAnimal{
@@ -423,6 +486,10 @@ class Cheloniidae : public WaterAnimal{
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){};
+
 };
 
 /*******************/
@@ -446,6 +513,25 @@ class Kucing : public Felidae { //pada map ditulis K
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Meow!" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+
+		};
+
 };
 
 class Harimau : public Felidae {//pada map ditulis H
@@ -464,6 +550,24 @@ class Harimau : public Felidae {//pada map ditulis H
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Grrr!" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}			
+		};
+
 };
 
 class Singa : public Felidae {//pada map ditulis S
@@ -483,6 +587,24 @@ class Singa : public Felidae {//pada map ditulis S
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Roar!" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class Jerapah : public Giraffidae {//pada map ditulis J
@@ -501,6 +623,24 @@ class Jerapah : public Giraffidae {//pada map ditulis J
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Kress.." << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class Okapi : public Giraffidae {//pada map ditulis O
@@ -519,6 +659,24 @@ class Okapi : public Giraffidae {//pada map ditulis O
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Rrrr..." << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class Panda : public Ursidae {//pada map ditulis D
@@ -537,6 +695,24 @@ class Panda : public Ursidae {//pada map ditulis D
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Hoaam..." << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}			
+		};
+
 };
 
 class Beruang : public Ursidae {//pada map ditulis B
@@ -555,6 +731,25 @@ class Beruang : public Ursidae {//pada map ditulis B
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "GRRRR!" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+
+		};
+
 };
 
 class Zebra : public Equidae {//pada map ditulis Z
@@ -573,6 +768,24 @@ class Zebra : public Equidae {//pada map ditulis Z
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Yiha!" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class Kuda : public Equidae {//pada map ditulis U
@@ -591,6 +804,25 @@ class Kuda : public Equidae {//pada map ditulis U
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Yiha!! Husshh" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+
+		};
+
 };
 
 /****************WATER ANIMAL*****************/
@@ -611,6 +843,23 @@ class Ebosia : public Scorpaenidae {//pada map ditulis E
 		//deklarasi polimorfik
 		virtual void Eat(){};
 
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Blubub blubub.." << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class Lionfish : public Scorpaenidae {//pada map ditulis I
@@ -629,6 +878,24 @@ class Lionfish : public Scorpaenidae {//pada map ditulis I
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Blubub.. blubub.." << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class LumbaLumba : public Delphidae {//pada map ditulis L
@@ -647,6 +914,24 @@ class LumbaLumba : public Delphidae {//pada map ditulis L
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Splash.. splash.. ikikikk" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class HiuPutih : public Selachii {//pada map ditulis T
@@ -665,6 +950,25 @@ class HiuPutih : public Selachii {//pada map ditulis T
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Splash!" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+
+		};
+
 };
 
 class BigBlueOct : public Octopodiae {//pada map ditulis G
@@ -683,6 +987,25 @@ class BigBlueOct : public Octopodiae {//pada map ditulis G
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Splash.." << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+
+		};
+
 };
 
 class EastPacRedOct : public Octopodiae {//pada map ditulis R
@@ -701,6 +1024,24 @@ class EastPacRedOct : public Octopodiae {//pada map ditulis R
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Splash..." << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}			
+		};
+
 };
 
 /****************AIR ANIMAL*****************/
@@ -720,6 +1061,25 @@ class Merpati : public Columbidae {//pada map ditulis M
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Cuit.. cuit.." << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class Rajawali : public Accipitridae {//pada map ditulis W
@@ -738,6 +1098,24 @@ class Rajawali : public Accipitridae {//pada map ditulis W
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Rowk rowk" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class Elang : public Accipitridae {//pada map ditulis N
@@ -756,6 +1134,24 @@ class Elang : public Accipitridae {//pada map ditulis N
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Quarkkk!" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class Kelelawar : public Molossidae {//pada map ditulis A
@@ -775,6 +1171,23 @@ class Kelelawar : public Molossidae {//pada map ditulis A
 		//deklarasi polimorfik
 		virtual void Eat(){};
 
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Krook krook!" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 class Cendrawasih : public Paradisaeidae {//pada map ditulis C
@@ -793,6 +1206,25 @@ class Cendrawasih : public Paradisaeidae {//pada map ditulis C
 
 		//deklarasi polimorfik
 		virtual void Eat(){};
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Kukukuk!!!" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+
+		};
+
 };
 
 class Penyu : public Cheloniidae {
@@ -811,6 +1243,24 @@ class Penyu : public Cheloniidae {
 
 		//deklarasi polimorfik
 		virtual void Eat(){};		
+
+		//deklarasi polimorfik interact
+		virtual void Interact(){
+			//Inisialisasi Random
+			srand ((unsigned) time (0));
+
+			//Inisialisasi random
+			int kategori_interact = (rand() % 3);
+
+			if (kategori_interact == 0) {
+				cout << "Zzzz..." << endl;
+			} else if (kategori_interact == 1) {
+				cout << "Nyawnnn!" << endl;
+			} else {
+				cout << "Nyam nyam..." << endl;
+			}
+		};
+
 };
 
 #endif
