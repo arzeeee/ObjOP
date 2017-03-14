@@ -19,7 +19,7 @@ false = tidak jinak
 */
 class Animal{
   public :
-  	virtual void Eat() const = 0;
+  	virtual void Eat() = 0;
 
   	//getter
   	virtual int getWeight(){return animal_weight;};
