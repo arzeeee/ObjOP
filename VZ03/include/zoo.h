@@ -4,6 +4,8 @@
 #include "cell.h"
 class Zoo {
 	public :
+		//ctor tanpa parameter
+		Zoo();
 		//ctor dengan parameter
 		Zoo(int nbrs, int nkol) ;
 
@@ -25,10 +27,11 @@ class Zoo {
 		//Setter
 		void SetElementZoo(int i, int j, int k);
 	
-	private :
-		Cell **matriks_sel;	
 		const int nbaris;
 		const int nkolom;
+	private :
+		Cell **matriks_sel;	
+		
 };
 
 #endif
