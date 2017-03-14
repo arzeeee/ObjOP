@@ -78,6 +78,8 @@ using namespace std;
 Driver::Driver() : zoo_width(20), zoo_height(20) {
     //Implementasi matriks_map
     int i,j;
+    int aid;
+    int cid;
 
     ifstream infile;
     infile.open ("mapZoo.txt");
@@ -133,8 +135,7 @@ Driver::Driver() : zoo_width(20), zoo_height(20) {
     //inisiasi cage dari matriks_map
     for (i = 0;i<zoo_height;i++) {
         for (j = 0; j < zoo_width; j++){
-            int cid = ((matriks_map[i][j][1] - '0') * 10) + (matriks_map[i][j][2] - '0');    
-            int aid;
+            cid = ((matriks_map[i][j][1] - '0') * 10) + (matriks_map[i][j][2] - '0');    
             if (matriks_map[i][j][0] == 'K') {
                 aid = 1;
             } else if (matriks_map[i][j][0] == 'H') {
