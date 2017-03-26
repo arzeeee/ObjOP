@@ -2,14 +2,18 @@ CC=g++
 INCLUDE_DIR=include
 SOURCE_DIR=src
 CFLAGS=-I$(INCLUDE_DIR) -Wall -g -lm -std=c++11 
-SOURCE=bin/animal.o \
+SOURCE= bin/driver.o \
+	bin/cage.o \
+	bin/cages.o \
+	bin/player.o \
+	bin/animal.o \
 	bin/cell.o \
 	bin/render.o \
 	bin/zoo.o 
 
 TEST=maincell mainzoo test try
 
-all: build
+all: main
 
 bin/%.o: src/%.cpp include/*.h
 	$(CC) $(CFLAGS) -c -o $@ $<
@@ -18,8 +22,8 @@ testbin/%.o: tests/%.cpp include/*.h
 	mkdir -p testbin
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-build: $(SOURCE) bin/main.o
-	$(CC) -o bin/VirtualZoo $^ $(CFLAGS)
+main: $(SOURCE) bin/main.o
+	$(CC) -o bin/main $^ $(CFLAGS)
 
 build_test: $(SOURCE)
 	mkdir -p testbin

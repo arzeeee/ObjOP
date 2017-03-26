@@ -1,5 +1,14 @@
-#include <iostream>
+#include "include/driver.h"
+#include "include/player.h"
 
-int main(){
-   return 0;
-};
+#include <iostream>
+using namespace std;
+
+int main () {
+    Driver d;
+
+     d.PrintInterface();
+    d.InputPilihan();
+ 
+    return 0;
+}

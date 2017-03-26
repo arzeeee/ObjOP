@@ -7,9 +7,9 @@ using namespace std;
 /*DEFINISI  ANIMAL*/
 /******************/
 
-//Tidak direalisasikan karena kelas ABC
+//@Tidak direalisasikan karena kelas ABC
 
-//ctor tanpa parameter
+//@ctor tanpa parameter
 LandAnimal::LandAnimal(){
 	setWeight(0);
 	setTipe(0);
@@ -18,7 +18,7 @@ LandAnimal::LandAnimal(){
 	setY(0);
 }
 
-//ctor dengan parameter
+//@ctor dengan parameter
 LandAnimal::LandAnimal(int weight, int tipe, bool tamed,int x,int y) {
 	animal_weight = weight;
 	animal_tipe = tipe;
@@ -27,7 +27,7 @@ LandAnimal::LandAnimal(int weight, int tipe, bool tamed,int x,int y) {
 	location_y = y;
 }
 
-//cctor
+//@cctor
 LandAnimal::LandAnimal(const LandAnimal& la) {
 	this->animal_weight = la.animal_weight;
 	this->animal_tipe = la.animal_tipe;
@@ -36,22 +36,23 @@ LandAnimal::LandAnimal(const LandAnimal& la) {
 	this->location_y = la.location_y;
 }
 
-//dtor
+//@dtor
 LandAnimal::~LandAnimal() {}
 
-//operator=
+//@operator=
 LandAnimal& LandAnimal::operator=(const LandAnimal& lam) {
 	this->animal_weight = lam.animal_weight;
 	this->animal_tipe = lam.animal_tipe;
 	this->animal_tamed = lam.animal_tamed;
 	this->location_x = lam.location_x;
 	this->location_y = lam.location_y;
+	return *this;
 }
 
 
-//Air Animal
+//@Air Animal
 
-//ctor tanpa parameter
+//@ctor tanpa parameter
 AirAnimal::AirAnimal(){
 	setWeight(0);
 	setTipe(0);
@@ -60,7 +61,7 @@ AirAnimal::AirAnimal(){
 	setY(0);
 }
 
-//ctor dengan parameter
+//@ctor dengan parameter
 AirAnimal::AirAnimal(int weight, int tipe, bool tamed,int x,int y){
 	animal_weight = weight;
 	animal_tipe = tipe;
@@ -69,30 +70,32 @@ AirAnimal::AirAnimal(int weight, int tipe, bool tamed,int x,int y){
 	location_y = y;
 }
 
-//cctor
+//@cctor
 AirAnimal::AirAnimal(const AirAnimal& aa) {
 	this->animal_weight = aa.animal_weight;
 	this->animal_tipe = aa.animal_tipe;
 	this->animal_tamed = aa.animal_tamed;
 	this->location_x = aa.location_x;
 	this->location_y = aa.location_y;
+
 }
 
-//dtor
+//@dtor
 AirAnimal::~AirAnimal() {}
 
-//operator=
+//@operator=
 AirAnimal& AirAnimal::operator=(const AirAnimal& aam) {
 	this->animal_weight = aam.animal_weight;
 	this->animal_tipe = aam.animal_tipe;
 	this->animal_tamed = aam.animal_tamed;
 	this->location_x = aam.location_x;
 	this->location_y = aam.location_y;
+	return *this;
 } 
 
-//Water Animal
+//@Water Animal
 
-//ctor tanpa parameter
+//@ctor tanpa parameter
 WaterAnimal::WaterAnimal(){
 	setWeight(0);
 	setTipe(0);
@@ -101,7 +104,7 @@ WaterAnimal::WaterAnimal(){
 	setY(0);
 }
 
-//ctor dengan parameter
+//@ctor dengan parameter
 WaterAnimal::WaterAnimal(int weight, int tipe, bool tamed,int x,int y){
 	animal_weight = weight;
 	animal_tipe = tipe;
@@ -110,7 +113,7 @@ WaterAnimal::WaterAnimal(int weight, int tipe, bool tamed,int x,int y){
 	location_y = y;
 }
 
-//cctor
+//@cctor
 WaterAnimal::WaterAnimal(const WaterAnimal& wa) {
 	this->animal_weight = wa.animal_weight;
 	this->animal_tipe = wa.animal_tipe;
@@ -119,16 +122,17 @@ WaterAnimal::WaterAnimal(const WaterAnimal& wa) {
 	this->location_y = wa.location_y;
 }
 
-//dtor
+//@dtor
 WaterAnimal::~WaterAnimal() {}
 
-//operator=
+//@operator=
 WaterAnimal& WaterAnimal::operator=(const WaterAnimal& wam) {
 	this->animal_weight = wam.animal_weight;
 	this->animal_tipe = wam.animal_tipe;
 	this->animal_tamed = wam.animal_tamed;
 	this->location_y = wam.location_y;
 	this->location_x = wam.location_x;
+	return *this;
 } 
 
 
@@ -137,7 +141,7 @@ WaterAnimal& WaterAnimal::operator=(const WaterAnimal& wam) {
 /*DEFINISI  FAMILI ANIMAL*/
 /*************************/
 
-//Implementasi Felidae
+//@Implementasi Felidae
 Felidae::Felidae(){
 	setWeight(0);
 	setTipe(0);
@@ -164,11 +168,11 @@ Felidae::Felidae(const Felidae& f){
 
 Felidae::~Felidae() {}
 
-Felidae& Felidae::operator=(const Felidae& fm) {}
+Felidae& Felidae::operator=(const Felidae& fm) { return *this; }
 
 
 
-//Implementasi Giraffidae
+//@Implementasi Giraffidae
 Giraffidae::Giraffidae(){
 	setWeight(0);
 	setTipe(0);
@@ -195,11 +199,11 @@ Giraffidae::Giraffidae(const Giraffidae& g){
 
 Giraffidae::~Giraffidae() {}
 
-Giraffidae& Giraffidae::operator=(const Giraffidae& gm) {}
+Giraffidae& Giraffidae::operator=(const Giraffidae& gm) { return *this; }
 
 
 
-//Implementasi Ursidae
+//@Implementasi Ursidae
 Ursidae::Ursidae(){
 	setWeight(0);
 	setTipe(0);
@@ -227,11 +231,11 @@ Ursidae::Ursidae(const Ursidae& u) {
 
 Ursidae::~Ursidae() {}
 
-Ursidae& Ursidae::operator=(const Ursidae& um) {}
+Ursidae& Ursidae::operator=(const Ursidae& um) { return *this; }
 
 
 
-//Implementasi Equidae
+//@Implementasi Equidae
 Equidae::Equidae(){
 	setWeight(0);
 	setTipe(0);
@@ -258,11 +262,11 @@ Equidae::Equidae(const Equidae& e){
 
 Equidae::~Equidae() {}
 
-Equidae& Equidae::operator=(const Equidae& em) {}
+Equidae& Equidae::operator=(const Equidae& em) { return *this; }
 
 
 
-//Implementasi Scorpaenidae
+//@Implementasi Scorpaenidae
 Scorpaenidae::Scorpaenidae(){
 	setWeight(0);
 	setTipe(0);
@@ -289,11 +293,11 @@ Scorpaenidae::Scorpaenidae(const Scorpaenidae& s){
 
 Scorpaenidae::~Scorpaenidae() {}
 
-Scorpaenidae& Scorpaenidae::operator=(const Scorpaenidae& sm) {}
+Scorpaenidae& Scorpaenidae::operator=(const Scorpaenidae& sm) { return *this; }
 
 
 
-//Implementasi Delphidae
+//@Implementasi Delphidae
 Delphidae::Delphidae(){
 	setWeight(0);
 	setTipe(0);
@@ -320,11 +324,11 @@ Delphidae::Delphidae(const Delphidae& d){
 
 Delphidae::~Delphidae() {}
 
-Delphidae& Delphidae::operator=(const Delphidae& dm) {}
+Delphidae& Delphidae::operator=(const Delphidae& dm) { return *this; }
 
 
 
-//Implementasi Selachii
+//@Implementasi Selachii
 Selachii::Selachii(){
 	setWeight(0);
 	setTipe(0);
@@ -351,11 +355,11 @@ Selachii::Selachii(const Selachii& s){
 
 Selachii::~Selachii() {}
 
-Selachii& Selachii::operator=(const Selachii& sm) {}
+Selachii& Selachii::operator=(const Selachii& sm) { return *this; }
 
 
 
-//Implementasi Octopodiae
+//@Implementasi Octopodiae
 Octopodiae::Octopodiae(){
 	setWeight(0);
 	setTipe(0);
@@ -382,11 +386,11 @@ Octopodiae::Octopodiae(const Octopodiae& o){
 
 Octopodiae::~Octopodiae() {}
 
-Octopodiae& Octopodiae::operator=(const Octopodiae& om) {}
+Octopodiae& Octopodiae::operator=(const Octopodiae& om) { return *this; }
 
 
 
-//Implementasi Columbidae
+//@Implementasi Columbidae
 Columbidae::Columbidae(){
 	setWeight(0);
 	setTipe(0);
@@ -413,11 +417,11 @@ Columbidae::Columbidae(const Columbidae& c){
 
 Columbidae::~Columbidae() {}
 
-Columbidae& Columbidae::operator=(const Columbidae& cm) {}
+Columbidae& Columbidae::operator=(const Columbidae& cm) { return *this; }
 
 
 
-//Implementasi Accipitridae
+//@Implementasi Accipitridae
 Accipitridae::Accipitridae(){
 	setWeight(0);
 	setTipe(0);
@@ -444,11 +448,11 @@ Accipitridae::Accipitridae(const Accipitridae& a){
 
 Accipitridae::~Accipitridae() {}
 
-Accipitridae& Accipitridae::operator=(const Accipitridae& am) {}
+Accipitridae& Accipitridae::operator=(const Accipitridae& am) { return *this; }
 
 
 
-//Implementasi Molossidae
+//@Implementasi Molossidae
 Molossidae::Molossidae(){
 	setWeight(0);
 	setTipe(0);
@@ -475,11 +479,11 @@ Molossidae::Molossidae(const Molossidae& m){
 
 Molossidae::~Molossidae() {}
 
-Molossidae& Molossidae::operator=(const Molossidae& mm) {}
+Molossidae& Molossidae::operator=(const Molossidae& mm) { return *this; }
 
 
 
-//Implementasi Paradisaeidae
+//@Implementasi Paradisaeidae
 Paradisaeidae::Paradisaeidae(){
 	setWeight(0);
 	setTipe(0);
@@ -506,9 +510,9 @@ Paradisaeidae::Paradisaeidae(const Paradisaeidae& p){
 
 Paradisaeidae::~Paradisaeidae() {}
 
-Paradisaeidae& Paradisaeidae::operator=(const Paradisaeidae& pm) {}
+Paradisaeidae& Paradisaeidae::operator=(const Paradisaeidae& pm) { return *this; }
 
-//Implementasi Cheloniidae
+//@Implementasi Cheloniidae
 Cheloniidae::Cheloniidae(){
 	setWeight(0);
 	setTipe(0);
@@ -535,7 +539,7 @@ Cheloniidae::Cheloniidae(const Cheloniidae& c){
 
 Cheloniidae::~Cheloniidae() {}
 
-Cheloniidae& Cheloniidae::operator=(const Cheloniidae& cm) {}
+Cheloniidae& Cheloniidae::operator=(const Cheloniidae& cm) { return *this; }
 
 
 
@@ -544,7 +548,7 @@ Cheloniidae& Cheloniidae::operator=(const Cheloniidae& cm) {}
 /*******************/
 
 /****************LAND ANIMAL*****************/
-//Implementasi Kucing
+//@Implementasi Kucing
 Kucing::Kucing(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -563,10 +567,10 @@ Kucing::Kucing(const Kucing& k){
 
 Kucing::~Kucing() {}
 
-Kucing& Kucing::operator=(const Kucing& km) {}
+Kucing& Kucing::operator=(const Kucing& km) { return *this; }
 
 
-//Implementasi Harimau
+//@Implementasi Harimau
 Harimau::Harimau(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
@@ -585,11 +589,11 @@ Harimau::Harimau(const Harimau& h){
 
 Harimau::~Harimau() {}
 
-Harimau& Harimau::operator=(const Harimau& hm) {}
+Harimau& Harimau::operator=(const Harimau& hm) { return *this; }
 
 
 
-//Implementasi Singa
+//@Implementasi Singa
 Singa::Singa(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -608,11 +612,11 @@ Singa::Singa(const Singa& s){
 
 Singa::~Singa() {}
 
-Singa& Singa::operator=(const Singa& sm) {}
+Singa& Singa::operator=(const Singa& sm) { return *this; }
 
 
 
-//Implementasi Jerapah
+//@Implementasi Jerapah
 Jerapah::Jerapah(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
@@ -631,11 +635,11 @@ Jerapah::Jerapah(const Jerapah& j){
 
 Jerapah::~Jerapah() {}
 
-Jerapah& Jerapah::operator=(const Jerapah& jm) {}
+Jerapah& Jerapah::operator=(const Jerapah& jm) { return *this; }
 
 
 
-//Implementasi Okapi
+//@Implementasi Okapi
 Okapi::Okapi(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -654,11 +658,11 @@ Okapi::Okapi(const Okapi& o){
 
 Okapi::~Okapi(){}
 
-Okapi& Okapi::operator=(const Okapi& om) {}
+Okapi& Okapi::operator=(const Okapi& om) { return *this; }
 
 
 
-//Implementasi Panda
+//@Implementasi Panda
 Panda::Panda(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -677,11 +681,11 @@ Panda::Panda(const Panda& p){
 
 Panda::~Panda(){}
 
-Panda& Panda::operator=(const Panda& pm) {}
+Panda& Panda::operator=(const Panda& pm) { return *this; }
 
 
 
-//Implementasi Beruang
+//@Implementasi Beruang
 Beruang::Beruang(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -700,11 +704,11 @@ Beruang::Beruang(const Beruang& b){
 
 Beruang::~Beruang(){}
 
-Beruang& Beruang::operator=(const Beruang& bm) {}
+Beruang& Beruang::operator=(const Beruang& bm) { return *this; }
 
 
 
-//Implementasi Zebra
+//@Implementasi Zebra
 Zebra::Zebra(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -723,11 +727,11 @@ Zebra::Zebra(const Zebra& z){
 
 Zebra::~Zebra(){}
 
-Zebra& Zebra::operator=(const Zebra& zm) {}
+Zebra& Zebra::operator=(const Zebra& zm) { return *this; }
 
 
 
-//Implementasi Kuda
+//@Implementasi Kuda
 Kuda::Kuda(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -746,13 +750,13 @@ Kuda::Kuda(const Kuda& k){
 
 Kuda::~Kuda(){}
 
-Kuda& Kuda::operator=(const Kuda& km) {}
+Kuda& Kuda::operator=(const Kuda& km) { return *this; }
 
 
 
 
 /****************WATER ANIMAL*****************/
-//Impelemntasi Ebosia
+//@Impelemntasi Ebosia
 Ebosia::Ebosia(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -771,11 +775,11 @@ Ebosia::Ebosia(const Ebosia& e){
 
 Ebosia::~Ebosia(){}
 
-Ebosia& Ebosia::operator=(const Ebosia& em) {}
+Ebosia& Ebosia::operator=(const Ebosia& em) { return *this; }
 
 
 
-//Implementasi Lionfish
+//@Implementasi Lionfish
 Lionfish::Lionfish(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -794,11 +798,11 @@ Lionfish::Lionfish(const Lionfish& l){
 
 Lionfish::~Lionfish(){}
 
-Lionfish& Lionfish::operator=(const Lionfish& lm) {}
+Lionfish& Lionfish::operator=(const Lionfish& lm) { return *this; }
 
 
 
-//Implementasi LumbaLumba
+//@Implementasi LumbaLumba
 LumbaLumba::LumbaLumba(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
@@ -817,11 +821,11 @@ LumbaLumba::LumbaLumba(const LumbaLumba& l){
 
 LumbaLumba::~LumbaLumba(){}
 
-LumbaLumba& LumbaLumba::operator=(const LumbaLumba& lm) {}
+LumbaLumba& LumbaLumba::operator=(const LumbaLumba& lm) { return *this; }
 
 
 
-//Implementasi HiuPutih
+//@Implementasi HiuPutih
 HiuPutih::HiuPutih(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -840,11 +844,11 @@ HiuPutih::HiuPutih(const HiuPutih& h){
 
 HiuPutih::~HiuPutih(){}
 
-HiuPutih& HiuPutih::operator=(const HiuPutih& hm) {}
+HiuPutih& HiuPutih::operator=(const HiuPutih& hm) { return *this; }
 
 
 
-//Implementasi BigBlueOct
+//@Implementasi BigBlueOct
 BigBlueOct::BigBlueOct(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -863,11 +867,11 @@ BigBlueOct::BigBlueOct(const BigBlueOct& b){
 
 BigBlueOct::~BigBlueOct(){}
 
-BigBlueOct& BigBlueOct::operator=(const BigBlueOct& bm) {}
+BigBlueOct& BigBlueOct::operator=(const BigBlueOct& bm) { return *this; }
 
 
 
-//Implementasi EastPacRedOct
+//@Implementasi EastPacRedOct
 EastPacRedOct::EastPacRedOct(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
@@ -886,13 +890,13 @@ EastPacRedOct::EastPacRedOct(const EastPacRedOct& e){
 
 EastPacRedOct::~EastPacRedOct(){}
 
-EastPacRedOct& EastPacRedOct::operator=(const EastPacRedOct& em) {}
+EastPacRedOct& EastPacRedOct::operator=(const EastPacRedOct& em) { return *this; }
 
 
 
 
 /****************AIR ANIMAL*****************/
-//Implementasi Merpati
+//@Implementasi Merpati
 Merpati::Merpati(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -911,11 +915,11 @@ Merpati::Merpati(const Merpati& m){
 
 Merpati::~Merpati(){}
 
-Merpati& Merpati::operator=(const Merpati& mm) {}
+Merpati& Merpati::operator=(const Merpati& mm) { return *this; }
 
 
 
-//Impelementasi Rajawali
+//@Impelementasi Rajawali
 Rajawali::Rajawali(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -934,11 +938,11 @@ Rajawali::Rajawali(const Rajawali& r){
 
 Rajawali::~Rajawali(){}
 
-Rajawali& Rajawali::operator=(const Rajawali& rm) {}
+Rajawali& Rajawali::operator=(const Rajawali& rm) { return *this; }
 
 
 
-//Impelementasi Elang
+//@Impelementasi Elang
 Elang::Elang(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -957,11 +961,11 @@ Elang::Elang(const Elang& e){
 
 Elang::~Elang(){}
 
-Elang& Elang::operator=(const Elang& em) {}
+Elang& Elang::operator=(const Elang& em) { return *this; }
 
 
 
-//Implementasi Kelelawar
+//@Implementasi Kelelawar
 Kelelawar::Kelelawar(int weight, int tipe, bool tamed,int x,int y) {
 	setWeight(weight);
 	setTipe(tipe);
@@ -980,11 +984,11 @@ Kelelawar::Kelelawar(const Kelelawar& k){
 
 Kelelawar::~Kelelawar(){}
 
-Kelelawar& Kelelawar::operator=(const Kelelawar& km) {}
+Kelelawar& Kelelawar::operator=(const Kelelawar& km) { return *this; }
 
 
 
-//Implementasi Cendrawasih
+//@Implementasi Cendrawasih
 Cendrawasih::Cendrawasih(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -1003,9 +1007,9 @@ Cendrawasih::Cendrawasih(const Cendrawasih& c){
 
 Cendrawasih::~Cendrawasih(){}
 
-Cendrawasih& Cendrawasih::operator=(const Cendrawasih& cm) {}
+Cendrawasih& Cendrawasih::operator=(const Cendrawasih& cm) { return *this; }
 
-//Implementasi Penyu
+//@Implementasi Penyu
 Penyu::Penyu(int weight, int tipe, bool tamed,int x,int y){
 	setWeight(weight);
 	setTipe(tipe);
@@ -1024,6 +1028,6 @@ Penyu::Penyu(const Penyu& p){
 
 Penyu::~Penyu(){}
 
-Penyu& Penyu::operator=(const Penyu& pm) {}
+Penyu& Penyu::operator=(const Penyu& pm) { return *this; }
 
 
